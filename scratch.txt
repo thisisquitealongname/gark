@@ -31,14 +31,14 @@ Ted and Ned were tradelling down the spookaloo one nighty transit empty, while t
 So tell me when you're ready.
 
 
-You can't take it anymore. There's a river and a trainbridge.
+You can't take it anymore. There's a river and a trainbridge. 
 
 
 [CODE STRUCTURE]
 -single player but with jumping perspectives
  -jump at will, just rely on the state vars (this means there's lots of different paths through the stories)
  -jump at fixed points in the story (eg Animorphs)
--genuine multiplayer -- concurrency bugs
+-genuine multiplayer, -- concurrency bugs
 -timestamp every page (or at least, certain key pages) and make everyone wait till everyone gets to the same place
 -
 
