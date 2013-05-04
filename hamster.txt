@@ -7,6 +7,7 @@ Your name is Squiggles, the Hamster with the concept of time and numeracy.
 	<<set $hamsterCageDestroyed = false>> 
 	<<set $catLocation = "living room">>
 	<<set $hamsterRoomOccupiedByHuman = false>>
+
 <<endsilently>>
 <<display "In Cage">>
 
@@ -26,7 +27,7 @@ You're in your cage.
 :: Exit Cage
 You scurry out the door. On the last bar, you realize there's nothing stopping your 4 foot descent onto the tile floor. You try to cling onto metal with your hind legs, but it's no use. You plummet.
 
-Ouch. Son of a hamster. You can't move.
+Ouch. Son of a pellet. You can't move.
 
 Exactly 4 hours and 3 minutes later, a foot descends onto you, splattering you across the tile.
 
@@ -61,11 +62,11 @@ You're in the hallway.
 :: Bedroom
 You're in your bedroom.
 
-<<if $hamsterCatInBedroom>>
+<<if $catLocation eq "bedroom">>
 	There is a cat slinking about the room, eyeing you. It makes you uncomfortable.
+
 	<<if $hamsterCageDestroyed>>
 		Your cage lies shattered on the floor.
-		<<actions "Run From Cat">>
 	<<else>>
 		<<if $hamsterCageOpen>>
 			Your cage is open.
@@ -91,7 +92,20 @@ You're in your bedroom.
 
 
 :: Run From Cat
-
+<<silently>>
+	<<if $catLocation eq "bedroom">>
+		<<set $hamsterEscape = "Hallway">>
+	<<endif>>
+<<endsilently>>
+	You scurry from the bedroom and into the <<print $hamsterEscape>>, dropping a pellet as you go.
+<<silently>>
+	<<if $hamsterPellets gt 0>>
+		<<set $hamsterPellets = $hamsterPellets - 1>>
+	<<endif>>
+<<endsilently>>
+You now have <<print $hamsterPellets>> pellets.
+
+<<display "Hallway">>
 
 
 :: Leap Away From Cat
@@ -105,7 +119,7 @@ You leap away from the cat and scurry into the middle of the bedroom.
 
 
 :: Eat Pellets
-Nom nom. You store several pellets in your cheek.
+Nom nom. You store 6 pellets in your cheek.
 <<silently>>
 	<<set $hamsterPellets = 6>>
 <<endsilently>>

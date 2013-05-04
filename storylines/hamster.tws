@@ -34,7 +34,7 @@ p16
 (dp17
 S'text'
 p18
-VIt's morning. This is the 364th day of your imprisonment in this 2 by 1 box of hate. Your life is one long, tediuous game of waiting, punctuated by terrifying moments of being swung up into the arms of your owners.\u000a\u000aYour name is Squiggles, the Hamster with the concept of time and numeracy.\u000a<<silently>>\u000a	<<set $hamsterCageOpen = true>> \u000a	<<set $hamsterCageDestroyed = false>> \u000a	<<set $catLocation = "living room">>\u000a	<<set $hamsterRoomOccupiedByHuman = false>>\u000a<<endsilently>>\u000a<<display "In Cage">>
+VIt's morning. This is the 364th day of your imprisonment in this 2 by 1 box of hate. Your life is one long, tediuous game of waiting, punctuated by terrifying moments of being swung up into the arms of your owners.\u000a\u000aYour name is Squiggles, the Hamster with the concept of time and numeracy.\u000a<<silently>>\u000a	<<set $hamsterCageOpen = true>> \u000a	<<set $hamsterCageDestroyed = false>> \u000a	<<set $catLocation = "living room">>\u000a	<<set $hamsterRoomOccupiedByHuman = false>>\u000a\u000a<<endsilently>>\u000a<<display "In Cage">>
 p19
 sS'tags'
 p20
@@ -114,7 +114,7 @@ Tiddler
 p44
 (dp45
 g18
-VYou scurry out the door. On the last bar, you realize there's nothing stopping your 4 foot descent onto the tile floor. You try to cling onto metal with your hind legs, but it's no use. You plummet.\u000a\u000aOuch. Son of a hamster. You can't move.\u000a\u000aExactly 4 hours and 3 minutes later, a foot descends onto you, splattering you across the tile.
+VYou scurry out the door. On the last bar, you realize there's nothing stopping your 4 foot descent onto the tile floor. You try to cling onto metal with your hind legs, but it's no use. You plummet.\u000a\u000aOuch. Son of a pellet. You can't move.\u000a\u000aExactly 4 hours and 3 minutes later, a foot descends onto you, splattering you across the tile.
 p46
 sg20
 (lp47
@@ -188,7 +188,7 @@ Tiddler
 p66
 (dp67
 g18
-VNom nom. You store several pellets in your cheek.\u000a<<silently>>\u000a	<<set $hamsterPellets = 6>>\u000a<<endsilently>>\u000a<<actions "Wander Out Of Cage">>
+VNom nom. You store 6 pellets in your cheek.\u000a<<silently>>\u000a	<<set $hamsterPellets = 6>>\u000a<<endsilently>>\u000a<<actions "Wander Out Of Cage">>
 p68
 sg20
 (lp69
@@ -217,8 +217,8 @@ g12
 I00
 sg13
 (lp76
-I222
-aI572
+I220
+aI571
 asg15
 (itiddlywiki
 Tiddler
@@ -288,7 +288,7 @@ VLeap Away From Cat
 p96
 sbsa(dp97
 g12
-I01
+I00
 sg13
 (lp98
 I393
@@ -336,7 +336,7 @@ Tiddler
 p110
 (dp111
 g18
-VYou're in your bedroom.\u000a\u000a<<if $hamsterCatInBedroom>>\u000a	There is a cat slinking about the room, eyeing you. It makes you uncomfortable.\u000a	<<if $hamsterCageDestroyed>>\u000a		Your cage lies shattered on the floor.\u000a		<<actions "Run From Cat">>\u000a	<<else>>\u000a		<<if $hamsterCageOpen>>\u000a			Your cage is open.\u000a			<<actions "Return To Cage" "Run From Cat">>\u000a		<<else>>\u000a			<<actions "Run From Cat">>\u000a		<<endif>>\u000a	<<endif>>\u000a<<else>>\u000a	<<if $hamsterCageDestroyed>>\u000a		Your cage lies shattered on the floor.\u000a		<<actions "Explore Bedroom" "Hallway">>\u000a	<<else>>\u000a		<<if (not $hamsterCageDestroyed) and $hamsterCageOpen>>\u000a			<<actions "Return To Cage" "Explore Bedroom" "Hallway">>\u000a		<<else>>\u000a			<<actions "Explore Bedroom" "Hallway">>\u000a		<<endif>>\u000a	<<endif>>\u000a<<endif>>\u000a\u000a
+VYou're in your bedroom.\u000a\u000a<<if $catLocation eq "bedroom">>\u000a	There is a cat slinking about the room, eyeing you. It makes you uncomfortable.\u000a\u000a	<<if $hamsterCageDestroyed>>\u000a		Your cage lies shattered on the floor.\u000a	<<else>>\u000a		<<if $hamsterCageOpen>>\u000a			Your cage is open.\u000a			<<actions "Return To Cage" "Run From Cat">>\u000a		<<else>>\u000a			<<actions "Run From Cat">>\u000a		<<endif>>\u000a	<<endif>>\u000a<<else>>\u000a	<<if $hamsterCageDestroyed>>\u000a		Your cage lies shattered on the floor.\u000a		<<actions "Explore Bedroom" "Hallway">>\u000a	<<else>>\u000a		<<if (not $hamsterCageDestroyed) and $hamsterCageOpen>>\u000a			<<actions "Return To Cage" "Explore Bedroom" "Hallway">>\u000a		<<else>>\u000a			<<actions "Explore Bedroom" "Hallway">>\u000a		<<endif>>\u000a	<<endif>>\u000a<<endif>>\u000a\u000a
 p112
 sg20
 (lp113
@@ -558,9 +558,10 @@ Tiddler
 p176
 (dp177
 g18
-g156
+V<<silently>>\u000a	<<if $catLocation eq "bedroom">>\u000a		<<set $hamsterEscape = "Hallway">>\u000a	<<endif>>\u000a<<endsilently>>\u000a	You scurry from the bedroom and into the <<print $hamsterEscape>>, dropping a pellet as you go.\u000a<<silently>>\u000a	<<if $hamsterPellets gt 0>>\u000a		<<set $hamsterPellets = $hamsterPellets - 1>>\u000a	<<endif>>\u000a<<endsilently>>\u000aYou now have <<print $hamsterPellets>> pellets.\u000a\u000a<<display "Hallway">>
+p178
 sg20
-(lp178
+(lp179
 sg22
 g23
 ((I2013
@@ -572,16 +573,16 @@ I6
 I5
 I124
 I1
-tp179
-(dp180
-tp181
-Rp182
+tp180
+(dp181
+tp182
+Rp183
 sg28
-g182
+g183
 sg29
 VRun From Cat
-p183
-sbsasS'scale'
 p184
-I1
+sbsasS'scale'
+p185
+F0.80000000000000004
 ss.
