@@ -34,7 +34,7 @@ p16
 (dp17
 S'text'
 p18
-VIt's morning. You are in your cage. This is the 364th day of your imprisonment in this 2 by 1 box of hate. Your life is one long, tediuous game of waiting, punctuated by terrifying moments of being swung up into the arms of your owners.\u000a\u000aYour name is Squiggles, the Hamster with the concept of time and numeracy.\u000a\u000a<<set $hamsterCageOpen = true>>\u000a<<set $hamsterCageDestroyed = false>>\u000a<<set $hamsterCatInBedroom = false>>\u000a\u000a<<if $hamsterCageOpen>>\u000a   The door is open. \u000a   <<choice "Exit Cage">>\u000a   <<choice "Stay In Cage">>\u000a<<endif>>
+VIt's morning. This is the 364th day of your imprisonment in this 2 by 1 box of hate. Your life is one long, tediuous game of waiting, punctuated by terrifying moments of being swung up into the arms of your owners.\u000a\u000aYour name is Squiggles, the Hamster with the concept of time and numeracy.\u000a<<set $hamsterCageOpen = true>> <<set $hamsterCageDestroyed = false>> <<set $hamsterCatInBedroom = false>>\u000a<<display "In Cage">>
 p19
 sS'tags'
 p20
@@ -69,15 +69,15 @@ g12
 I00
 sg13
 (lp32
-I32
-aI157
+I26
+aI209
 asg15
 (itiddlywiki
 Tiddler
 p33
 (dp34
 g18
-VYou huddle in the corner of the cage, nibbling on a pellet and staring at your running wheel.\u000a\u000aI'd better eat more before venturing out. Wise is the hamster that doesn't starve. <<choice "Eat Pellets">>\u000aI think I'll go for a run. That looks fun. <<choice "Run On Wheel">>
+VYou huddle in the corner of the cage, nibbling on a pellet and staring at your running wheel.\u000a\u000aI'd better eat more before venturing out. Wise is the hamster that doesn't starve! <<actions "Eat Pellets">>\u000aI think I'll go for a run. That looks fun. <<actions "Run On Wheel">>
 p35
 sg20
 (lp36
@@ -114,7 +114,7 @@ Tiddler
 p44
 (dp45
 g18
-VYou scurry out the door. On the last bar, you realize there's nothing below the door. You try to cling onto metal with your hind legs, but there's nothing stopping your 4 foot descent onto the tile floor.\u000a\u000aOuch. Son of a hamster. You can't move.\u000a\u000aExactly 4 hours and 3 minutes later, a foot descends onto you, splattering you across the tile.
+VYou scurry out the door. On the last bar, you realize there's nothing stopping your 4 foot descent onto the tile floor. You try to cling onto metal with your hind legs, but it's no use. You plummet.\u000a\u000aOuch. Son of a hamster. You can't move.\u000a\u000aExactly 4 hours and 3 minutes later, a foot descends onto you, splattering you across the tile.
 p46
 sg20
 (lp47
@@ -143,15 +143,15 @@ g12
 I00
 sg13
 (lp54
-I231
-aI160
+I235
+aI203
 asg15
 (itiddlywiki
 Tiddler
 p55
 (dp56
 g18
-VYou hop on, and begin to run.\u000a\u000aSuddenly, you feel the wheel loosen and detach from the cage. The wheel hits the bottom of the cage and careens into the side, shifting the entire cage off of its resting place and onto the floor. The plastic bottom shatters.\u000a\u000aMortified and still wheelbound, you continue to run forwards until the wheel hits a wall and falls on its side. You climb out, rattled.\u000a\u000a<<set $hamsterCageDestroyed = true>>\u000a\u000a<<choose "Bedroom Floor">>
+VYou hop on, and begin to run.\u000a\u000aSuddenly, you feel the wheel loosen and detach from the cage. The wheel hits the bottom of the cage and careens into the side, shifting the entire cage off of its resting place and onto the floor. The plastic bottom shatters.\u000a\u000aMortified and still wheelbound, you continue to run forwards until the wheel hits a wall and falls on its side. You climb out, rattled.\u000a<<silently>>\u000a	<<set $hamsterCageDestroyed = true>>\u000a<<endsilently>>\u000a<<actions "Bedroom">>
 p57
 sg20
 (lp58
@@ -180,15 +180,15 @@ g12
 I00
 sg13
 (lp65
-I26
-aI298
+I23
+aI372
 asg15
 (itiddlywiki
 Tiddler
 p66
 (dp67
 g18
-VNom nom.\u000a\u000a<<choice "Wander Out Of Cage">>
+VNom nom.\u000a\u000a<<actions "Wander Out Of Cage">>
 p68
 sg20
 (lp69
@@ -214,18 +214,18 @@ VEat Pellets
 p74
 sbsa(dp75
 g12
-I00
+I01
 sg13
 (lp76
-I233
-aI295
+I222
+aI409
 asg15
 (itiddlywiki
 Tiddler
 p77
 (dp78
 g18
-VYou wander out of your cage. Below, a cat stalks by.\u000a\u000a<<set $hamsterCatInBedroom = true>>\u000a\u000a<<choice "Leap Onto Cat">>\u000a<<choice "Leap Away From Cat">>
+VYou wander out of your cage. Below, a cat stalks by.\u000a<<silently>>\u000a	<<set $hamsterCatInBedroom = true>>\u000a<<endsilently>>\u000a<<actions "Leap Onto Cat" "Leap Away From Cat">>
 p79
 sg20
 (lp80
@@ -325,18 +325,18 @@ VLeap Onto Cat
 p107
 sbsa(dp108
 g12
-I01
+I00
 sg13
 (lp109
-I561
-aI296
+I387
+aI159
 asg15
 (itiddlywiki
 Tiddler
 p110
 (dp111
 g18
-VYou're in your bedroom.\u000a\u000a<<if $hamsterCageDestroyed>>\u000aYour cage lies shattered on the floor.\u000a<<else>>\u000a<<choice "Return To Cage">>\u000a<<endif>>\u000a\u000a<<if $hamsterCatInBedroom>>\u000aThere is a cat slinking about the room, eyeing you. It makes you uncomfortable.\u000a<<choice "Run From Cat">>\u000a<<endif>>\u000a\u000a
+VYou're in your bedroom.\u000a\u000a<<if $hamsterCageDestroyed>>\u000aYour cage lies shattered on the floor.\u000a<<else>>\u000a	<<if (not $hamsterCageDestroyed) and $hamsterCageOpen>>\u000a		<<actions "Return To Cage">>\u000a	<<endif>>\u000a<<endif>>\u000a\u000a<<if $hamsterCatInBedroom>>\u000a	There is a cat slinking about the room, eyeing you. It 		makes you uncomfortable.\u000a	<<actions "Run From Cat">>\u000a<<else>>\u000a	<<actions "Explore Bedroom" "Hallway">>\u000a<<endif>>\u000a\u000a
 p112
 sg20
 (lp113
@@ -397,7 +397,81 @@ g128
 sg29
 VLiving Room
 p129
+sbsa(dp130
+g12
+I00
+sg13
+(lp131
+I604
+aI161
+asg15
+(itiddlywiki
+Tiddler
+p132
+(dp133
+g18
+V<<display "In Cage">>
+p134
+sg20
+(lp135
+sg22
+g23
+((I2013
+I5
+I4
+I13
+I37
+I26
+I5
+I124
+I1
+tp136
+(dp137
+tp138
+Rp139
+sg28
+g139
+sg29
+VReturn To Cage
+p140
+sbsa(dp141
+g12
+I00
+sg13
+(lp142
+I374
+aI15
+asg15
+(itiddlywiki
+Tiddler
+p143
+(dp144
+g18
+VYou're in your cage.\u000a\u000a<<if $hamsterCageOpen>>\u000a   The door is open. \u000a   <<actions "Exit Cage" "Stay In Cage">>\u000a<<else>>\u000a	The door is closed.\u000a	<<actions "Stay in Cage">>\u000a<<endif>>
+p145
+sg20
+(lp146
+sg22
+g23
+((I2013
+I5
+I4
+I14
+I6
+I7
+I5
+I124
+I1
+tp147
+(dp148
+tp149
+Rp150
+sg28
+g150
+sg29
+VIn Cage
+p151
 sbsasS'scale'
-p130
+p152
 I1
 ss.

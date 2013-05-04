@@ -1,0 +1,106 @@
+:: Start
+It's morning. This is the 364th day of your imprisonment in this 2 by 1 box of hate. Your life is one long, tediuous game of waiting, punctuated by terrifying moments of being swung up into the arms of your owners.
+
+Your name is Squiggles, the Hamster with the concept of time and numeracy.
+<<set $hamsterCageOpen = true>> <<set $hamsterCageDestroyed = false>> <<set $hamsterCatInBedroom = false>>
+<<display "In Cage">>
+
+
+:: In Cage
+You're in your cage.
+
+<<if $hamsterCageOpen>>
+   The door is open. 
+   <<actions "Exit Cage" "Stay In Cage">>
+<<else>>
+	The door is closed.
+	<<actions "Stay in Cage">>
+<<endif>>
+
+
+:: Exit Cage
+You scurry out the door. On the last bar, you realize there's nothing stopping your 4 foot descent onto the tile floor. You try to cling onto metal with your hind legs, but it's no use. You plummet.
+
+Ouch. Son of a hamster. You can't move.
+
+Exactly 4 hours and 3 minutes later, a foot descends onto you, splattering you across the tile.
+
+
+:: Bedroom
+You're in your bedroom.
+
+<<if $hamsterCageDestroyed>>
+Your cage lies shattered on the floor.
+<<else>>
+	<<if (not $hamsterCageDestroyed) and $hamsterCageOpen>>
+		<<actions "Return To Cage">>
+	<<endif>>
+<<endif>>
+
+<<if $hamsterCatInBedroom>>
+	There is a cat slinking about the room, eyeing you. It 		makes you uncomfortable.
+	<<actions "Run From Cat">>
+<<else>>
+	<<actions "Explore Bedroom" "Hallway">>
+<<endif>>
+
+
+
+
+:: Return To Cage
+<<display "In Cage">>
+
+
+:: Run On Wheel
+You hop on, and begin to run.
+
+Suddenly, you feel the wheel loosen and detach from the cage. The wheel hits the bottom of the cage and careens into the side, shifting the entire cage off of its resting place and onto the floor. The plastic bottom shatters.
+
+Mortified and still wheelbound, you continue to run forwards until the wheel hits a wall and falls on its side. You climb out, rattled.
+<<silently>>
+	<<set $hamsterCageDestroyed = true>>
+<<endsilently>>
+<<actions "Bedroom">>
+
+
+:: Stay In Cage
+You huddle in the corner of the cage, nibbling on a pellet and staring at your running wheel.
+
+I'd better eat more before venturing out. Wise is the hamster that doesn't starve! <<actions "Eat Pellets">>
+I think I'll go for a run. That looks fun. <<actions "Run On Wheel">>
+
+
+:: Leap Away From Cat
+You leap away from the cat and scurry into the middle of the bedroom.
+
+<<display "Bedroom">>
+
+
+:: Eat Pellets
+Nom nom.
+
+<<actions "Wander Out Of Cage">>
+
+
+:: Wander Out Of Cage
+You wander out of your cage. Below, a cat stalks by.
+<<silently>>
+	<<set $hamsterCatInBedroom = true>>
+<<endsilently>>
+<<actions "Leap Onto Cat" "Leap Away From Cat">>
+
+
+:: Leap Onto Cat
+You brazenly leap towards the cat. Puff! You land in its fur and cling to its back.
+
+Startled, the cat takes off and runs downstairs, zigzagging through a maze of legs. You fall off, landing on a red rug in a room full of people.
+
+<<set $hamsterCatInBedroom>>
+
+<<display "Living Room">>
+
+
+:: Living Room
+You're in the living room.
+
+
