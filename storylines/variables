@@ -6,5 +6,8 @@ $hamsterCageOpen (true/false)
 $hamsterCageDestroyed (true/false) #hamster cage is broken and on floor
 <<set $hamsterCageDestroyed = false>>
 
-$hamsterCatInBedroom (true/false) #cat is in bedroom
-<<set $hamsterCatInBedroom = false>>
+$catLocation (string) #cat is in bedroom
+<<set $catLocation = "living room">>
+
+$hamsterRoomOccupiedByHuman (true/false) #set to true whenever a human player is in a room. The hamster will get picked up and put back in its cage
+<<set $hamsterRoomOccupiedByHuman = false>>

@@ -2,7 +2,12 @@
 It's morning. This is the 364th day of your imprisonment in this 2 by 1 box of hate. Your life is one long, tediuous game of waiting, punctuated by terrifying moments of being swung up into the arms of your owners.
 
 Your name is Squiggles, the Hamster with the concept of time and numeracy.
-<<set $hamsterCageOpen = true>> <<set $hamsterCageDestroyed = false>> <<set $hamsterCatInBedroom = false>>
+<<silently>>
+	<<set $hamsterCageOpen = true>> 
+	<<set $hamsterCageDestroyed = false>> 
+	<<set $catLocation = "living room">>
+	<<set $hamsterRoomOccupiedByHuman = false>>
+<<endsilently>>
 <<display "In Cage">>
 
 
@@ -26,29 +31,15 @@ Ouch. Son of a hamster. You can't move.
 Exactly 4 hours and 3 minutes later, a foot descends onto you, splattering you across the tile.
 
 
-:: Bedroom
-You're in your bedroom.
-
-<<if $hamsterCageDestroyed>>
-Your cage lies shattered on the floor.
-<<else>>
-	<<if (not $hamsterCageDestroyed) and $hamsterCageOpen>>
-		<<actions "Return To Cage">>
-	<<endif>>
-<<endif>>
-
-<<if $hamsterCatInBedroom>>
-	There is a cat slinking about the room, eyeing you. It 		makes you uncomfortable.
-	<<actions "Run From Cat">>
-<<else>>
-	<<actions "Explore Bedroom" "Hallway">>
-<<endif>>
-
-
-
-
 :: Return To Cage
 <<display "In Cage">>
+
+
+:: Stay In Cage
+You huddle in the corner of the cage, nibbling on a pellet and staring at your running wheel.
+
+I'd better eat more before venturing out. Wise is the hamster that doesn't starve! <<actions "Eat Pellets">>
+I think I'll go for a run. That looks fun. <<actions "Run On Wheel">>
 
 
 :: Run On Wheel
@@ -63,11 +54,44 @@ Mortified and still wheelbound, you continue to run forwards until the wheel hit
 <<actions "Bedroom">>
 
 
-:: Stay In Cage
-You huddle in the corner of the cage, nibbling on a pellet and staring at your running wheel.
+:: Hallway
+You're in the hallway.
+
+
+:: Bedroom
+You're in your bedroom.
 
-I'd better eat more before venturing out. Wise is the hamster that doesn't starve! <<actions "Eat Pellets">>
-I think I'll go for a run. That looks fun. <<actions "Run On Wheel">>
+<<if $hamsterCatInBedroom>>
+	There is a cat slinking about the room, eyeing you. It makes you uncomfortable.
+	<<if $hamsterCageDestroyed>>
+		Your cage lies shattered on the floor.
+		<<actions "Run From Cat">>
+	<<else>>
+		<<if $hamsterCageOpen>>
+			Your cage is open.
+			<<actions "Return To Cage" "Run From Cat">>
+		<<else>>
+			<<actions "Run From Cat">>
+		<<endif>>
+	<<endif>>
+<<else>>
+	<<if $hamsterCageDestroyed>>
+		Your cage lies shattered on the floor.
+		<<actions "Explore Bedroom" "Hallway">>
+	<<else>>
+		<<if (not $hamsterCageDestroyed) and $hamsterCageOpen>>
+			<<actions "Return To Cage" "Explore Bedroom" "Hallway">>
+		<<else>>
+			<<actions "Explore Bedroom" "Hallway">>
+		<<endif>>
+	<<endif>>
+<<endif>>
+
+
+
+
+:: Run From Cat
+
 
 
 :: Leap Away From Cat
@@ -76,16 +100,22 @@ You leap away from the cat and scurry into the middle of the bedroom.
 <<display "Bedroom">>
 
 
+:: Explore Bedroom
+
+
+
 :: Eat Pellets
-Nom nom.
-
+Nom nom. You store several pellets in your cheek.
+<<silently>>
+	<<set $hamsterPellets = 6>>
+<<endsilently>>
 <<actions "Wander Out Of Cage">>
 
 
 :: Wander Out Of Cage
 You wander out of your cage. Below, a cat stalks by.
 <<silently>>
-	<<set $hamsterCatInBedroom = true>>
+	<<set $catLocation = "bedroom">>
 <<endsilently>>
 <<actions "Leap Onto Cat" "Leap Away From Cat">>
 
@@ -95,8 +125,10 @@ You brazenly leap towards the cat. Puff! You land in its fur and cling to its ba
 
 Startled, the cat takes off and runs downstairs, zigzagging through a maze of legs. You fall off, landing on a red rug in a room full of people.
 
-<<set $hamsterCatInBedroom>>
-
+The cat scampers on, disappearing into the kitchen.
+<<silently>>
+	<<set $catLocation = "kitchen">>
+<<endsilently>>
 <<display "Living Room">>
 
 
