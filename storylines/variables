@@ -1,0 +1,5 @@
+Variables:
+
+$hamsterCageDestroyed (true/false) #hamster cage is broken and on floor
+
+<<set $hamsterCageDestroyed = true>>
