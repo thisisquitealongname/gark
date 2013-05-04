@@ -1,5 +1,10 @@
 Variables:
 
-$hamsterCageDestroyed (true/false) #hamster cage is broken and on floor
+$hamsterCageOpen (true/false)
+<<set $hamsterCageOpen = true>>
 
-<<set $hamsterCageDestroyed = true>>
+$hamsterCageDestroyed (true/false) #hamster cage is broken and on floor
+<<set $hamsterCageDestroyed = false>>
+
+$hamsterCatInBedroom (true/false) #cat is in bedroom
+<<set $hamsterCatInBedroom = false>>

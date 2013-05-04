@@ -1,7 +1,7 @@
 (dp0
 S'buildDestination'
 p1
-S''
+VT:\u005ctojam\u005cgark\u005cstorylines\u005chamster-test\u005chamster-test.html
 p2
 sS'saveDestination'
 p3
@@ -24,8 +24,8 @@ I00
 sS'pos'
 p13
 (lp14
-I287
-aI19
+I22
+aI14
 asS'passage'
 p15
 (itiddlywiki
@@ -34,7 +34,7 @@ p16
 (dp17
 S'text'
 p18
-VIt's morning. You are in your cage. This is the 364th day of your imprisonment in this 2 by 1 box of hate. Your life is one long, tediuous game of waiting, punctuated by terrifying moments of being swung up into the arms of your owners.\u000a\u000aYour name is Squiggles, the Hamster with the concept of time and numeracy.\u000a\u000a\u000a\u000aif cageopen {\u000a   The door is open. \u000a   <<choice "Exit Cage">>\u000a   <<choice "Stay In Cage">>\u000a }
+VIt's morning. You are in your cage. This is the 364th day of your imprisonment in this 2 by 1 box of hate. Your life is one long, tediuous game of waiting, punctuated by terrifying moments of being swung up into the arms of your owners.\u000a\u000aYour name is Squiggles, the Hamster with the concept of time and numeracy.\u000a\u000a<<set $hamsterCageOpen = true>>\u000a<<set $hamsterCageDestroyed = false>>\u000a<<set $hamsterCatInBedroom = false>>\u000a\u000a<<if $hamsterCageOpen>>\u000a   The door is open. \u000a   <<choice "Exit Cage">>\u000a   <<choice "Stay In Cage">>\u000a<<endif>>
 p19
 sS'tags'
 p20
@@ -69,8 +69,8 @@ g12
 I00
 sg13
 (lp32
-I285
-aI190
+I32
+aI157
 asg15
 (itiddlywiki
 Tiddler
@@ -106,8 +106,8 @@ g12
 I00
 sg13
 (lp43
-I570
-aI10
+I772
+aI14
 asg15
 (itiddlywiki
 Tiddler
@@ -143,15 +143,15 @@ g12
 I00
 sg13
 (lp54
-I518
-aI188
+I231
+aI160
 asg15
 (itiddlywiki
 Tiddler
 p55
 (dp56
 g18
-VYou hop on, and begin to run.\u000a\u000aSuddenly, you feel the wheel loosen and detach from the cage. The wheel hits the bottom of the cage and careens into the side, shifting the entire cage off of its resting place and onto the floor. The plastic bottom shatters.\u000a\u000aMortified and still wheelbound, you continue to run forwards until the wheel hits a wall and falls on its side. You climb out, rattled.\u000a\u000a<<set $hamsterCageDestroyed = true>>
+VYou hop on, and begin to run.\u000a\u000aSuddenly, you feel the wheel loosen and detach from the cage. The wheel hits the bottom of the cage and careens into the side, shifting the entire cage off of its resting place and onto the floor. The plastic bottom shatters.\u000a\u000aMortified and still wheelbound, you continue to run forwards until the wheel hits a wall and falls on its side. You climb out, rattled.\u000a\u000a<<set $hamsterCageDestroyed = true>>\u000a\u000a<<choose "Bedroom Floor">>
 p57
 sg20
 (lp58
@@ -180,8 +180,8 @@ g12
 I00
 sg13
 (lp65
-I289
-aI334
+I26
+aI298
 asg15
 (itiddlywiki
 Tiddler
@@ -217,15 +217,15 @@ g12
 I00
 sg13
 (lp76
-I460
-aI346
+I233
+aI295
 asg15
 (itiddlywiki
 Tiddler
 p77
 (dp78
 g18
-VYou wander out of your cage. A cat walks by
+VYou wander out of your cage. Below, a cat stalks by.\u000a\u000a<<set $hamsterCatInBedroom = true>>\u000a\u000a<<choice "Leap Onto Cat">>\u000a<<choice "Leap Away From Cat">>
 p79
 sg20
 (lp80
@@ -249,7 +249,155 @@ g84
 sg29
 VWander Out Of Cage
 p85
+sbsa(dp86
+g12
+I00
+sg13
+(lp87
+I389
+aI293
+asg15
+(itiddlywiki
+Tiddler
+p88
+(dp89
+g18
+VYou leap away from the cat and scurry into the middle of the bedroom.\u000a\u000a<<display "Bedroom">>
+p90
+sg20
+(lp91
+sg22
+g23
+((I2013
+I5
+I4
+I13
+I5
+I34
+I5
+I124
+I1
+tp92
+(dp93
+tp94
+Rp95
+sg28
+g95
+sg29
+VLeap Away From Cat
+p96
+sbsa(dp97
+g12
+I00
+sg13
+(lp98
+I392
+aI445
+asg15
+(itiddlywiki
+Tiddler
+p99
+(dp100
+g18
+VYou brazenly leap towards the cat. Puff! You land in its fur and cling to its back.\u000a\u000aStartled, the cat takes off and runs downstairs, zigzagging through a maze of legs. You fall off, landing on a red rug in a room full of people.\u000a\u000a<<set $hamsterCatInBedroom>>\u000a\u000a<<display "Living Room">>
+p101
+sg20
+(lp102
+sg22
+g23
+((I2013
+I5
+I4
+I13
+I11
+I16
+I5
+I124
+I1
+tp103
+(dp104
+tp105
+Rp106
+sg28
+g106
+sg29
+VLeap Onto Cat
+p107
+sbsa(dp108
+g12
+I01
+sg13
+(lp109
+I561
+aI296
+asg15
+(itiddlywiki
+Tiddler
+p110
+(dp111
+g18
+VYou're in your bedroom.\u000a\u000a<<if $hamsterCageDestroyed>>\u000aYour cage lies shattered on the floor.\u000a<<else>>\u000a<<choice "Return To Cage">>\u000a<<endif>>\u000a\u000a<<if $hamsterCatInBedroom>>\u000aThere is a cat slinking about the room, eyeing you. It makes you uncomfortable.\u000a<<choice "Run From Cat">>\u000a<<endif>>\u000a\u000a
+p112
+sg20
+(lp113
+sg22
+g23
+((I2013
+I5
+I4
+I13
+I13
+I28
+I5
+I124
+I1
+tp114
+(dp115
+tp116
+Rp117
+sg28
+g117
+sg29
+VBedroom
+p118
+sbsa(dp119
+g12
+I00
+sg13
+(lp120
+I564
+aI451
+asg15
+(itiddlywiki
+Tiddler
+p121
+(dp122
+g18
+VYou're in the living room.
+p123
+sg20
+(lp124
+sg22
+g23
+((I2013
+I5
+I4
+I13
+I31
+I40
+I5
+I124
+I1
+tp125
+(dp126
+tp127
+Rp128
+sg28
+g128
+sg29
+VLiving Room
+p129
 sbsasS'scale'
-p86
+p130
 I1
 ss.
