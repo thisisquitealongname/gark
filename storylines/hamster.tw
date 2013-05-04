@@ -1,0 +1,15 @@
+
+:: Start
+
+It's morning. You are in your cage. This is the 364th day of your imprisonment in  this 2 by 1 box of hate. Your life is one long, tediuous, punctuated by terrifying moments of being swung up into the arms of your owners.
+
+Your name is Squiggles.
+
+if cageopen {
+   The door is open. 
+   <<actions "Quit Cage" "Stay In Cowering">>
+ }
+ 
+:: Quit Cage
+
+:: Stay In Cowering
