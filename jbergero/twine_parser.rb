@@ -1,22 +1,26 @@
 @master_node_list = []
 
-#buggy atm :(
+#incomplete object
+#just takes in some text arbitrarily for now
 class TwineParselet
   
- # my_text
+  attr_accessor :my_text
   
   def initialize
-    my_text = ''
+    @my_text = ''
   end
   
   #cram another line of .tw text into here
   def cram line
-    my_text << line.strip
+    @my_text << line.strip!
+    @my_text << "\n" unless line == ''
   end
   
   #okay... now that we have all our data in my_text, it's time to start parsing
-  def wrapup mnl
-    mnl << self
+  def wrapup nodelist
+    
+    #lol lazy (much more work needs to be done in this method)
+    nodelist << self 
   end
   
 end
@@ -32,12 +36,12 @@ File.open("../hamster.txt", "r") do |infile|
     end
     node.cram line
   end
-  node.wrapup @master_node_list
+  node.wrapup @master_node_list #srsly ruby? I have to hand this in as an argument because TwineParselet don't know how to touch a global variable?
 end
   
 @master_node_list.each do |x|
   
-  puts x
+  puts x.my_text
   puts
   puts '========'
   puts
