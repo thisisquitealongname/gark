@@ -31,11 +31,16 @@ Ted and Ned were tradelling down the spookaloo one nighty transit empty, while t
 So tell me when you're ready.
 
 
+You can't take it anymore. There's a river and a trainbridge.
 
 
-She pushes a perfect lock behind her ear in one smooth sweep, without noticing, and squints her eyes. There's a thought there that she's going to hold onto like a treasure.
-
-You've always loved her from afar. She was your neighbour. You played together as kids. You dug into the mucky swimming hole in the sad forest reserve your neighbhourhood's corporation designated 20 years ago. You told each other about your first __- __ ____
+[CODE STRUCTURE]
+-single player but with jumping perspectives
+ -jump at will, just rely on the state vars (this means there's lots of different paths through the stories)
+ -jump at fixed points in the story (eg Animorphs)
+-genuine multiplayer -- concurrency bugs
+-timestamp every page (or at least, certain key pages) and make everyone wait till everyone gets to the same place
+-
 
 
 
