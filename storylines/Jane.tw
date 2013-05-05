@@ -1,20 +1,20 @@
 #Jane: hip and aloof. good sartorial sense. kind of depressed. keeps up with what's hip but is better than it.
 #todo: add pics. twine can defs be hacked to support images.
+#freely spread consumerism throughout this. it's the suburbs, afterall.
 
 #inspiration: ginger snaps, cobra starship, 
-#and and larissa is quiet without much to offer, but has a lot of hidden gems in her thoughts. Jane likes that she seems real. Sometimes too real: her standing up to Jane about outting themselves is the first time she's asserted herself
-
-#Jane
-
 
 :: Start
 
 It's morning. You've slept in past the [[bell]] again.
 
-Your Dad has already but your mother, bless her prozac-munching heart, wouldn't deign to bother you. Not anymore. You get up on your own time, if you get up, if there's something good going on.
+Your Dad has already taken your brother [[Sam]] to school but your mother, bless her prozac-munching heart, wouldn't deign to bother you. Not anymore. You get up on your own time, if you get up, if there's something good going on.
 
 You roll over, grunt, unwedge your panties, and fall back asleep, drooling, into your [[pillow]].
 
+
+:: Sam
+What a little twerp.  He has that fucking hamster that he never plays with, except to throw around by its neck.
 
 :: bell
 The bell at school is an inoffensive and toothless riff based on Chuck Berry's ancient surf-pop. Every day you cringe inwardly when it tills the garden of children you're entangled with. You wish it was Timo Räisänen or Beirut's Gulag Orkestra or even Bach. You would never let anyone at school know this, though. Never let any of them know you care.
@@ -42,22 +42,23 @@ You smell bread, mysteriously.
 You set [[off down the street]].
 
 :: off down the street
-Tamerlane Avenue is as nondescript as the other 21 streets in your neighbourhood. You've counted all of them several times over. You reflect that it is ironic that in a, that it is precisely because . You wish you could express this. Well, Larissa will understand. You smile a bit at the thought.
+Tamerlane Avenue is as nondescript as the other 21 streets in your neighbourhood. You've counted all of them several times over. The three nearest are Guilder Crescent to the south and Holly Street which crosses Tamerlane latitudinally. You reflect that it is ironic that in a suburb, in fact that it is precisely because the suburb. You wish you could express this to someone. Well, Larissa will understand. You smile a bit at the thought.
 
-It's not that you are a slacker, it's just that... you can't bring yourself to care. You .... [[school]]. 
+It's not that you are a slacker, it's just that... you can't bring yourself to care about anything anyone wants you to care about. You would be writing poetry and slitting your wrists...
 
-You would be writing poetry if that wasn't already so fucking overdone.
+...if it wasn't already so fucking overdone.
 
 <<choice "Take the direct route" "direct">>
 <<choice "Pass through the suburban ghetto across the street" "Ghetto">>
 
 :: direct
-
+The sun is too hot here, the cars are too loud, and the concrete too hard. The most interesting part of following Yonge Street
 [[school]]
 
 :: Ghetto
+The main drag here is called David Road. You avoid it an cut off along the polluted, brambly path beside the drainage stream that runs across most of the tiny side roads. [[Larissa's house|met her]]
 
-[[school]]
+You make it to [[school]] faster than you hoped.
 
 :: school
 <<choice "Smokers">>
@@ -76,7 +77,7 @@ Where else are you going to go? You only smoke socially, but it's not like you a
 
 Larissa. Lovely Larissa. You call her 'issa, like "is a", as in "is a boss", "is a player", "is a snowflake" [XXX too sappy?].  She's not Lisa, Leslie, Loren or Luke. Better than Tessa and that boy John who felt you up awkwardly in his friend's closet at a party. Far better. She's made your heart flutter in a way you didn't know it could.
 
-Larissa lives on the other side, in the low-income sprawl. Neither of you do extra curriculars anymore. You've never had any classes with her, which is why you only [[met her]] late last year. She's a year older thanbut then again so are all of your friends. That comes with skipping a grade 
+Larissa lives on the other side, in the low-income sprawl. Neither of you do extra curriculars anymore. You've never had any classes with her, which is why you only [[met her]] late last year. She's a year older than you, but then again so are all of your friends. That's your reward for showing off to the teacher in Grade 3.
 
 when you were younger. When you still cared. Now you just want to want something.
 
@@ -85,8 +86,26 @@ Larissa slinks up to you, flip flops in hand.
 "Hey"
 "Hey"
 
-That's all you have for each other. The school thinks you're just friends and you for one want to keep it that way.
+That's all you have for each other. The school thinks you're just friends and you for one want to [[keep it that way]].
 
+<<actions "Talk about the weather" "Take a bow" "Observe idly">>
+
+:: Talk about the weather
+Larissa giggles and punches you on the arm.
+
+But you really thought it was a nice day...
+<<back "smokers">>
+
+:: Take a bow
+You fix her with your trademark eyes. Without missing a tap you take a grand flourish before her, and stand back up without. It's out, but you're tired of fitting in. Is-A blusher.
+<<back "smokers">>
+
+:: Observe idly
+You stand back-to-brick next to 'issa, shoulders brushing innocuously, and smoke 
+<<back "smokers">>
+
+:: Take a bow
+<<back "smokers">>
 
 :: met her
 You had skipped out on last period. The French revolution was sooo last era. You know this history is important, but you've already read it and you know anything you've forgotten you can just get out of Wikipedia if ever you need it again. Instead, you wandered down train tracks, bored, hoping for something to happen. Usually when you do this you're unrewarded. One day you found a bird that had lost its mother in the forest, and you took it in and found found an animal rescue shelter that would take it. Another time _________________________. Those were the highlights of your Grade 11. That is, until today. On this day, something wonderful happened.
@@ -96,8 +115,6 @@ There is a rusty train bridge over Yonge St where the graffiti punkers go to pra
 
 [sultry meeting]
 
-You "Sometimes I feel like I'm not the [[main character]] in my own story. I hate how every piece of my life has already been played out elsewhere!"
-"But "
 
 
 -bond over boys hitting on them, just trying to get in their pants
@@ -106,7 +123,12 @@ You "Sometimes I feel like I'm not the [[main character]] in my own story. I hat
 
 :: main character
 
+You
+
 :: doubt
+
+You fall back onto the La-Z-Boy opine "Sometimes I feel like I'm not the [[main character]] in my own story. I hate how every piece of my life has already been played out elsewhere!"
+
 "But, Lovely, you are the center of the venn diagram of everything you've been exposed to," Larissa began soothingly, "Sure, all the parts of your life have been experienced by others--"
 "But you're the only person that all of what happens to you happens to," you spit, "I know. I thought that as soon as I said it. I just needed to bitch."
 
@@ -119,14 +141,12 @@ you know love won't be enough to get you out of the sprawl
 i'm boring you
 
 
-:: lezzy
+:: keep it that way
 "I-It's a lot more acceptable these days!" she barks again. It seems like she's always on this argument these days. She cares. In fact, that's what you like so much about her, but you're not sure you're really into it, into //her// type, though it sure is fun to trip along with. You are pretty sure you're into *her* though.
 
-She doesn't talk much around people, but in intimate settings she opens up like a flower display. It *inspires* you. she's so different than the rest of your social circle. She seems quiet, even plain, without much to offer, none of that sweet talking charm and confident showmanship, of which you are undeniably the queen. There's a lot of hidden [[gems]] in her.  For you, Larissa seems real. There's not really a lot like her that you could come across living in the sprawl.
+She doesn't talk much around people, but in intimate settings she opens up like a flower display. It *inspires* you. she's so different than the rest of your social circle. She seems quiet, even plain: sandy-brown hair, freckles and a button nose. Not much to offer, none of that sweet talking charm and confident showmanship, of which you are undeniably the queen. But there's a lot of hidden [[gems]] in her.  Gems she brings out for you. For you, Larissa seems real. There's not really a lot like her that you could come across living in the sprawl.
 
-And you like Larissa because . She only lets her thoughts out for people she trusts. For you. Larissa seems real.
-
-It's hard, her wanting to out herself. "Out" you. You don't think of yourself as a //lesbian//, and she has no right to drag your name through the mud like that. She wouldn't... but her jealousy of you might take a different turn[XXX cleanup]. She's never exercised [[autonomy]].
+So it's hard, her wanting to out herself. "Out" you. You don't think of yourself as a //lesbian//, and she has no right to drag your name through the mud like that. She wouldn't... but her jealousy of you might take a different turn[XXX cleanup]. She's never exercised [[autonomy]].
 
 
 :: Autonomy
@@ -134,8 +154,8 @@ Larissa sort of took on the womanly roles when her mom left. Her dad comes home 
 
 I think she likes me because I stand up to life. But sometimes I can't tell if it's admiration or jealousy, though. I'm not sure she can either.
 
-:: gems
 
+:: gems
 [[XXX switched personepctives]]
 the first time we fucked, she tasted like strawberries.
 
@@ -156,5 +176,3 @@ When she came, her clit glistened just like a pearl.
 
 
 
-
--we hate it when our friends become successful
