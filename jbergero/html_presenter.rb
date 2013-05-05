@@ -109,5 +109,30 @@ def names_match s1, s2
 end
 
 def twine2html instring
-  instring
-end
+  ret = ''
+  instring.each_line do |line|
+    if (line.start_with? '<<')
+      content = line[2..-4]
+      ret << "content: #{content} <br>"
+    else
+      ret << "<p>#{line}</p>"
+    end#if
+  end#instring.each
+  ret
+end#twine2html
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

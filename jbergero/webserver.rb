@@ -55,9 +55,9 @@ def render_page request_metavars
     #TODO: escort user back to home page or wherever they're supposed to be
     ret << 'you cheater'
   else 
-     ret << (pagebody requested_path)
+     #ret << (pagebody requested_path)
   end
-  
+  ret << (pagebody requested_path)
   
   ret
   

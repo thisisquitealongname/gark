@@ -49,7 +49,7 @@ File.open("../hamster.txt", "r") do |infile|
   node.wrapup @master_node_list #srsly ruby? I have to hand this in as an argument because TwineNode don't know how to touch a global variable?
 end
   
-#=begin
+=begin
 @master_node_list.each do |x|
   
   puts x.nodename
@@ -59,4 +59,4 @@ end
   puts '========'
   puts
   
-end
+=end
