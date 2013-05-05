@@ -37,15 +37,13 @@ l << {
 :text => %^The [sun] shifts 5 degrees and your pillow remains comfortable.^,
 :code => %^
 	if $hamster_location == :bedroom
-		@text << "You hear scurrying. Fuck. You'd better go chase the hamster."
-		@options << :chasethehamster
+		@options.merge! {:chasethehamster => "You hear scurrying. Fuck. You'd better go chase the hamster."}
 	else
-		@text << "The clock ticks."
-		@options << :clockticks << :sun
+		@options.merge! {:clockticks => "The clock ticks."}
 	end
 	
 	^,
-:options => [:sun]
+:options => [:sun => "Dream in a hazy dayz"]
 }
 
 l << {
@@ -108,7 +106,6 @@ l << {
 	
 	The main drag here is called David Road. You avoid it by cutting off along the polluted, brambly path beside the drainage stream that runs across most of the tiny side roads.
 	^,
-:code => %^^,
 :options => {:school => "You make it to school faster than you'd hoped."}
 }
 
@@ -123,13 +120,89 @@ l << {
 
 	Perched on the rusty, graffiti-grazed rail bridge over Yonge St was a girl that made your insides amble. Headphones on, 
 
-	
-
+[[-bond over boys hitting on them, just trying to get in their pants
+ --"this fucking asshole kept trying to impress me with his knowledge of like, fucking bash or something, and then turning to his friends and saying how. Hellloooo, who was it that installed his bootloader for him yesterday?" She takes a rapid drag of their cigaette.
+]]
 	
 	Her name was Larissa. You talked for hours.
 	^,
-:code => %^^,
-:options => {}
+:options => []
 }
 
+l << {
+:name => 'School',
+:location => :school
+:text => %^
+	You make it to school faster than you'd hoped.
+	^,
+:code => %^^,
+:options => [:smokers => "Have a few drags with the kids out front", :class => "Head to class"]
+}
+
+l << {
+:name => 'Smokers',
+:location => :smokers
+:text => %^
+	Where else are you going to go? You only smoke socially, but it's not like you actually showed up for class. And anyway, you spy Larissa across the pit. She's keeping warm with an ember under a tree. The leaves guide the trails of smoke as they curl down across the sickly butt-peppered grass.
+
+	Your eyes lock on Larissa. Lovely Larissa. You call her 'issa, like "is a", as in "is a snowflake". Enigmatic Issa -- she flutters; we flutter! She's not Lisa, Adam, Loren or Nick. Better than Tessa, Brian and that boy John who felt you up awkwardly in his friend's closet at a party. Far better. Refrain fell hard from your humdrum heart.
+
+	Larissa lives on the other side, in the low-income sprawl. Neither of you do extra curriculars anymore. You've never had any classes with her, which is why you only met Larissa late last year. She's a year older than you -- so are all of your friends. That's your reward for showing off to the teacher in Grade 3.
+
+	When you were younger; when you still cared. Well, when your wants and cares were identifiable. Now you just want to want. Simplicity blooms into drab grey rooms.
+
+	Larissa slinks up to you, flip-flops in hand. Flit-flut.
+
+	"Hey"
+	"Hey"
+
+	That's all you have for each other. To the world at large, you're just friends. That's your comfort-zone.
+	^,
+:code => %^^,
+:options => {:met_her => "Remember meeting Larissa", :talkabouttheweather => "Ask about the thunder you can scent rolling in", :tobytakeabow => "Bow with flourish to your secret lover", :observeidly => "Practice your suave"}
+}
+
+l << {
+:name => :talkabouttheweather,
+:text => %^
+	Giggling, Larissa grabs your forearm.
+	
+	"Sunburns sting, Jane."
+	^,
+:code => %^^,
+:options => [:smokers]
+}
+
+l << {
+:name => :tobytakeabow,
+:text => %^
+	You fix your eyes on her in a beam of visual cues. Your left leg slips behind your right, transforming into a grand flourish before her. 
+	
+	Yeah, that was probably abnormal. Fight the blush.
+	^,
+:code => %^^,
+:options => {:smokers => nil, :class => "Fuck! Escape to class."}
+}
+
+l << {
+:name => :observeidly,
+:text => %^
+	You stand back-to-brick next to 'issa, shoulders brushing innocuously. Heavy drags, foggy breath.
+	^,
+:code => %^^,
+:options => [:smokers]
+}
+
+
+l << {
+:name => :doubt,
+:text => %^
+	You fall back onto the La-Z-Boy opine "Sometimes I feel like I'm not the main character in my own story. I have the unshakeable sense that every piece of my life has already been played out elsewhere, or even right here."
+
+	"But, Lovely, you are the center of the venn diagram of everything you've been exposed to," Larissa began soothingly, "Sure, all the parts of your life have been experienced by others--"
+	"But you're the only person that all of what happens to you happens to," you spit, "I know. I thought that as soon as I said it. I just needed to bitch."
+^,
+:code => %^^,
+:options => []
+}
 
