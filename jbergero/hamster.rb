@@ -226,7 +226,7 @@ l << {
 	$hamster_escape = {:bedroom => :hallway, :hallway => :livingroom, :livingroom => :kitchen, :kitchen => :kitchenwalls}[$cat_location]
 	
 	@text << "You scurry from the bedroom and into the $hamster_escape, dropping a pellet as you go."
-	$hamster_pellets |= 0
+	$hamster_pellets = 0 unless $hamster_pellets
 	$hamster_pellets -= 1 if $hamster_pellets > 0
 	@text << "You now have $hamster_pellets pellets"
 	@options << $hamster_escape	
