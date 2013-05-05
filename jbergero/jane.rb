@@ -177,7 +177,7 @@ l << {
 	Yeah, that was probably abnormal. Fight the blush.
 	^,
 :code => %^^,
-:options => [:smokers]
+:options => [:smokers, :class => "Fuck! Escape to class."]
 }
 
 l << {
