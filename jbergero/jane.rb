@@ -38,41 +38,26 @@ page ,
 page :pillow,
 	%^The [sun] shifts 5 degrees and your pillow remains comfortable.^,	
 	{:location => :bedroom,
-	:start},
+	:sun => "Dream in a hazy dayz"},
 	do
-	
+		if $hamster_location == :bedroom
+			@options.merge! {:chasethehamster => "You hear scurrying. Fuck. You'd better go chase the hamster."}
+		else
+			@options.merge! {:clockticks => "The clock ticks."}
+		end 
 	end
-	
-l << {
-:name => :pillow,
-:location => :bedroom,
-:text => %^The [sun] shifts 5 degrees and your pillow remains comfortable.^,
-:code => %^
-	if $hamster_location == :bedroom
-		@options.merge! {:chasethehamster => "You hear scurrying. Fuck. You'd better go chase the hamster."}
-	else
-		@options.merge! {:clockticks => "The clock ticks."}
-	end
-	
-	^,
-:options => [:sun => "Dream in a hazy dayz"]
-}
 
-l << {
-:name => :sun,
-:text => %^
+page :sun,
+	%^
 	You're looking up at the sky. There's a blank expanse all around. You are aware that in microscope view there are blowing fields of wheat below your feet. The sun beads sweat out of you, slowly sucking your life. Purple and green whirlwinds tear the edges of reality apart in the distance. Somewhere, a wall chinks. A *Goat on a Pole* bounces with firm determination towards nothing.
 	Trees rattle in the empty wind.
 	You remember your future.
 	But you won't, when you wake up.
 	^,
-:code => %^^,
-:options => [:pillow]
-}
+	:pillow
 
-l << {
-:name => :clockticks,
-:text => %^
+page :clockticks,
+	%^
 	It's coming on third period. You decide to roll out of bed, make your daily effortlessly hip sartorial choices, and get out the door. Today: a boring orange tank top, your prefaded, pre-ripped jeans, and your poignantly unbranded headphones. You have flair, you know it, and you are above it. If your blonde curls weren't enough, your natural habit to hold yourself like you're always on the edge of a question would still make the boys fall over themselves around you. Sometimes you indulge them, but mostly you can't stand to step down to their level anymore. They say "I'd like to get to know you" and you hear "I want to trade genetics with you". A few times you've even lost your temper and left them stunned and lost as you tore apart their motivations.
 	
 	Sleepily mulling over all this for the umpteenth time, you're caught offguard by the sunlight. It momentarily blinds you.
@@ -81,14 +66,12 @@ l << {
 	
 	You set off down the street.
 	^,
-:code => %^^,
-:options => [:offdownthestreet]
-}
+	:offdownthestreet
 
-l << {
-:name => :offdownthestreet,
-:location => :tamerlane,
-:text => %^Tamerlane Avenue is as nondescript as the other 21 streets in your neighbourhood. You've counted all of them several times over. Guilder Crescent is nearby to the south. Holly Street crosses Tamerlane latitudinally. You reflect that it is ironic that suburbs, sold by corporations as "communities", are in fact more alienating than any other human creation. The sprawl is the logical end to the harmonious planned utopian communities of the past. Did the community planners and their cookie-cutters know how isolated it would make you feel?
+
+page :offdownthestreet,
+
+	%^Tamerlane Avenue is as nondescript as the other 21 streets in your neighbourhood. You've counted all of them several times over. Guilder Crescent is nearby to the south. Holly Street crosses Tamerlane latitudinally. You reflect that it is ironic that suburbs, sold by corporations as "communities", are in fact more alienating than any other human creation. The sprawl is the logical end to the harmonious planned utopian communities of the past. Did the community planners and their cookie-cutters know how isolated it would make you feel?
 
 	You wish you could proffer this profoundness to someone. Well, Larissa will understand! You smile a bit at the thought. It's 11:23am.
 	
@@ -98,32 +81,29 @@ l << {
 
 	"Let's get this over with." you mutter, and kick up the gain.
 	^,
-:options => {:directroutetoschool => "Take the main streets", :ghetto => "Cut through the back streets"}
-}
+	:location => :tamerlane,
+	:directroutetoschool => "Take the main streets", :ghetto => "Cut through the back streets"
 
-l << {
-:name => :directroutetoschool,
-:location => :davidroad,
-:text => %^
+
+page :directroutetoschool,
+	%^
 	The sun is too hot here, the cars are too loud, and the concrete is too hard. It's not like the plushy, pillowy-soft sidewalk I grew up on. The most interesting part of following Yonge Street.
 	^,
-:code => %^^,
-:options => {:school => "Bank rightwards."}
-}
+	:location => :davidroad,
+	:school => "Bank rightwards."
 
-l << {
-:name => :ghetto,
-:location => :ghetto,
-:text => %^It's not really the back streets, it's just the lower income neighbourhood across Yonge St. It's still the suburbs. Larissa lives here.
+
+page :ghetto,
+	%^
+	It's not really the back streets, it's just the lower income neighbourhood across Yonge St. It's still the suburbs. Larissa lives here.
 	
 	The main drag here is called David Road. You avoid it by cutting off along the polluted, brambly path beside the drainage stream that runs across most of the tiny side roads.
 	^,
-:options => {:school => "You make it to school faster than you'd hoped."}
-}
+	:location => :ghetto,
+	:school => "You make it to school faster than you'd hoped."
 
-l << {
-:name => :met_her,
-:text => %^
+page :met_her,
+	%^
 	You'd skipped out on last period. The French revolution was sooo last era. You know this stuff was significant at one point in time. You've already read it, already heard it. Sure, you'll forget it some -- but Wikipedia's a decent enough backup, and some history is worth forgetting. 
 	
 	You live for the moment. And this moment, you're wandering down train tracks, bored, hoping for something to happen. Usually unrewarding; occasionally eventful. The tracks are just far enough away from the suburbs to escape the wafting conflicts of broken families. 
@@ -138,23 +118,20 @@ l << {
 	
 	Her name was Larissa. You talked for hours.
 	^,
-:options => []
-}
+	:smokers => "Light another cigarette",
+	:crash => "Click here to get an error."
 
-l << {
-:name => 'School',
-:location => :school
-:text => %^
+
+page :school,
+	%^
 	You make it to school faster than you'd hoped.
 	^,
-:code => %^^,
-:options => [:smokers => "Have a few drags with the kids out front", :class => "Head to class"]
-}
+	:location => :school,
+	:smokers => "Have a few drags with the kids out front", :class => "Head to class"
 
-l << {
-:name => 'Smokers',
-:location => :smokers
-:text => %^
+
+page :smokers,
+	%^
 	Where else are you going to go? You only smoke socially, but it's not like you actually showed up for class. And anyway, you spy Larissa across the pit. She's keeping warm with an ember under a tree. The leaves guide the trails of smoke as they curl down across the sickly butt-peppered grass.
 
 	Your eyes lock on Larissa. Lovely Larissa. You call her 'issa, like "is a", as in "is a snowflake". Enigmatic Issa -- she flutters; we flutter! She's not Lisa, Adam, Loren or Nick. Better than Tessa, Brian and that boy John who felt you up awkwardly in his friend's closet at a party. Far better. Refrain fell hard from your humdrum heart.
@@ -170,9 +147,9 @@ l << {
 
 	That's all you have for each other. To the world at large, you're just friends. That's your comfort-zone.
 	^,
-:code => %^^,
-:options => {:met_her => "Remember meeting Larissa", :talkabouttheweather => "Ask about the thunder you can scent rolling in", :tobytakeabow => "Bow with flourish to your secret lover", :observeidly => "Practice your suave"}
-}
+	:location => :smokers
+	:met_her => "Remember meeting Larissa", :talkabouttheweather => "Ask about the thunder you can scent rolling in", :tobytakeabow => "Bow with flourish to your secret lover", :observeidly => "Practice your suave"
+
 
 l << {
 :name => :talkabouttheweather,
