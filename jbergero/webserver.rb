@@ -1,6 +1,5 @@
 require 'webrick'
 require './html_presenter.rb'
-require './twine_parser.rb'
 
 #create the http server object
 server = WEBrick::HTTPServer.new :Port => 8005
