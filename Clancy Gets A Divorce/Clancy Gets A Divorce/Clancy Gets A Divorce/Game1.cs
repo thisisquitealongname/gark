@@ -19,9 +19,16 @@ namespace Clancy_Gets_A_Divorce
         GraphicsDeviceManager graphics;
         SpriteBatch spriteBatch;
 
+        Texture2D ughTexture;
+        Vector2 ughPosition = Vector2.Zero;
+        Vector2 ughSpeed = new Vector2(0f, 0f);
+
         public Game1()
         {
             graphics = new GraphicsDeviceManager(this);
+            graphics.IsFullScreen = false;
+            graphics.PreferredBackBufferHeight = 480;
+            graphics.PreferredBackBufferWidth = 640;
             Content.RootDirectory = "Content";
         }
 
@@ -42,12 +49,19 @@ namespace Clancy_Gets_A_Divorce
         /// LoadContent will be called once per game and is the place to load
         /// all of your content.
         /// </summary>
+        /// 
+
+
+
         protected override void LoadContent()
         {
             // Create a new SpriteBatch, which can be used to draw textures.
             spriteBatch = new SpriteBatch(GraphicsDevice);
-
+            ughTexture = Content.Load<Texture2D>("imgUgh");
             // TODO: use this.Content to load your game content here
+            
+
+
         }
 
         /// <summary>
@@ -84,6 +98,10 @@ namespace Clancy_Gets_A_Divorce
             GraphicsDevice.Clear(Color.CornflowerBlue);
 
             // TODO: Add your drawing code here
+
+            spriteBatch.Begin(SpriteSortMode.BackToFront, BlendState.AlphaBlend);
+            spriteBatch.Draw(ughTexture, ughPosition, Color.White);
+            spriteBatch.End();
 
             base.Draw(gameTime);
         }
