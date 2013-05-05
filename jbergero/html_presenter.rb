@@ -1,6 +1,8 @@
 
-#require './twine_parser.rb'
+
 require './new_ruby_nodes.rb'
+require './hamster.rb'
+@master_node_list = @hamster_node_list
 
 def pageheader
   %[
@@ -81,33 +83,38 @@ def pagebody path
   return 'welcome to a new game of GARK. <a href="yourbedroom">start here</a>' if path == '' #replace this later with what we want the start page to be ('select your character'?)
   
   #find the correct node for shit
-  #WIP!
-  node = nil
-  @master_node_list.each do |x|
-    #next unless names_match(path, x.nodename)
-    next unless names_match(path, x[:name])
-    node = x
-    break
-  end
+  node = find_node path
   return 'unknown node' unless node
+   #this exception handling could afford some cleanup
   
-  #return twine2html(node.text) if node
-  
-  ret = ''
-  
-  @text = node[:text]
-  @options = node[:options]
-  
-  eval node[:code]
-  
-  ret << @text
-  @options.each do |opt|
-    ret << "<a href='#{opt.to_s}'>#{opt}</a>"
-  end
+  ret = render_node node
+  ret << "<hr>"
   
   ret << "cash = #{$money}"
   
   ret
+end
+
+def render_node node
+  @text = node[:text].clone
+  @options = node[:options].clone
+  eval node[:code]
+  
+  ret = "<pre>#{@text}</pre>"
+  @options.each do |opt|
+    ret << "<a href='#{opt.to_s}'>#{opt}</a>"
+  end
+  
+  ret  
+end
+
+
+def find_node blah
+  @master_node_list.each do |x|
+    next unless names_match(blah, x[:name])
+    return x
+  end
+  nil
 end
 
 #compares two strings, ignoring case and anything non-alphanumeric
