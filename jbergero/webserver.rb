@@ -9,22 +9,20 @@ trap 'INT' do server.shutdown end
 server.mount_proc '/' do |req, res|
   res.body = pageheader +
   "
-  <a href='yourbedroom'>start</a>
-  <br>
-  
+  <a href='start'>restart</a>
   <hr>
   
-  #{render_page req.meta_vars}
+  #{render_page_body req.meta_vars}
   
   " + 
   pagefooter
 end
 
-#the <body /> part of what we'll return
-def render_page request_metavars
+#the <body />
+def render_page_body request_metavars
   
   cheated = !request_metavars['HTTP_REFERER']
-    #false if this page was reached by legitimately clicking a link
+    #false if this page was reached by clicking a link
     #true if a url was typed in manually
   frompage = request_metavars['HTTP_REFERER'][7..-1].partition('/')[2] unless cheated
     #url of the page that sent us here. the leading 'http://domain.com/' has been stripped
@@ -36,21 +34,9 @@ def render_page request_metavars
   
   ret = ''
 
-=begin
-  ret << 'we are at '
-  ret << requested_path
-  ret << 'home' if atthehomepage
-  unless cheated
-    ret << "<BR> got here from "
-    ret << frompage
-  else
-    ret << "<br>GOT HERE BY CHEATING!!!!!" unless atthehomepage
-  end
-=end
-  
   if cheated then
     #TODO: escort user back to home page or wherever they're supposed to be
-    ret << 'you cheater'
+    ret << 'you cheater<hr>'
   else 
      #ret << (pagebody requested_path)
   end
