@@ -18,6 +18,7 @@ You roll over, grunt, unwedge your panties, and fall back asleep, drooling, into
 
 :: Sam
 What a little twerp.  He has that fucking hamster that he never plays with, except to throw around by its neck.
+<<back "start">>
 
 :: bell
 The bell at school is an inoffensive and toothless riff based on Chuck Berry's ancient surf-pop. Every day you cringe inwardly when it tills the garden of children you're entangled with. You wish it was Timo Räisänen or Beirut's Gulag Orkestra or even Bach. You would never let anyone at school know this, though. Never let any of them know you care.
@@ -26,7 +27,15 @@ The bell at school is an inoffensive and toothless riff based on Chuck Berry's a
 :: pillow
 The [[sun]] shifts 5 degrees and your pillow remains comfortable.
 
+<<if $hamsterEscape>>
+You hear scurrying. Fuck. You better go [[chase the hamster]]
+<<else>>
 The [[clock ticks]].
+<<endif>>
+
+:: chase the hamster
+<<set $jane_chasedHamster = true>>
+.... etc
 
 :: sun
 You're looking up at the sky. There's a blank expanse all around. You are aware that in microscope view there are blowing fields of wheat below your feet. The sun beads sweat out of you, slowly sucking your life. Purple and green whirlwinds tear the edges of reality apart in the distance. Somewhere, a wall chinks. A Goat on a Pole bounces with firm determination towards nothing.
