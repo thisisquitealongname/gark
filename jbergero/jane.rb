@@ -103,8 +103,6 @@ l << {
 :location => :ghetto
 :text => %^
 	The main drag here is called David Road. You avoid it by cutting off along the polluted, brambly path beside the drainage stream that runs across most of the tiny side roads. Walking by Larissa's house, your head wanders back to the first time you met her.
-	
-	You make it to school faster than you'd hoped.
 	^,
 :code => %^^,
 :options => [:metlarissa, :school]
@@ -128,27 +126,45 @@ l << {
 }
 
 l << {
-:name => '',
-:location => ''
-:text => %^^,
+:name => 'School',
+:location => :school
+:text => %^
+	You make it to school faster than you'd hoped.
+	^,
 :code => %^^,
-:options => []
+:options => [:smokers => "Have a few drags with the kids out front", :class => "Head to class"]
 }
 
 l << {
-:name => '',
-:location => ''
-:text => %^^,
+:name => 'Smokers',
+:location => :smokers
+:text => %^
+	Where else are you going to go? You only smoke socially, but it's not like you actually showed up for class. And anyway, you spy Larissa across the pit. She's keeping warm with an ember under a tree. The leaves guide the trails of smoke as they curl down across the sickly butt-peppered grass. Nothing comforts like toxicity.
+
+	Your eyes lock on Larissa. Lovely Larissa. You call her 'issa, like "is a", as in "is a snowflake". Enigmatic Issa -- she flutters; we flutter! She's not Lisa, Adam, Loren or Nick. Better than Tessa, Brian and that boy John who felt you up awkwardly in his friend's closet at a party. Far better. Refrain fell hard from your humdrum heart.
+
+	Larissa lives on the other side, in the low-income sprawl. Neither of you do extra curriculars anymore. You've never had any classes with her, which is why you only [met Larissa] late last year. She's a year older than you -- so are all of your friends. That's your reward for showing off to the teacher in Grade 3.
+
+	When you were younger; when you still cared. Well, when your wants and cares were identifiable. Now you just want to want. Simplicity blooms into drab grey rooms.
+
+	Larissa slinks up to you, flip-flops in hand. Flit-flut.
+
+	"Hey"
+	"Hey"
+
+	That's all you have for each other. To the world at large, you're just friends. That's your comfort-zone.
+	^,
 :code => %^^,
-:options => []
+:options => [:metlarissa, :talkabouttheweather, :tobytakeabow, :observeidly]
 }
 
 l << {
-:name => '',
-:location => ''
-:text => %^^,
+:name => 'Talk About The Weather',
+:text => %^
+	Giggling, Larissa grabs your forearm.
+	^,
 :code => %^^,
-:options => []
+:options => [:smokers]
 }
 
 l << {
