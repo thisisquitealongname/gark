@@ -140,9 +140,9 @@ l << {
 :code => %^
 	$hamster_pellets = 6
 	if $hamster_cage_open
-		options << :wanderoutofcage
+		@options << :wanderoutofcage
 	else
-		options << :stayincage
+		@options << :stayincage
 	end
 	^,
 :options => []
