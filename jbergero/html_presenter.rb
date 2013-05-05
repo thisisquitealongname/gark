@@ -4,7 +4,7 @@ require './new_ruby_nodes.rb'
 require './hamster.rb'
 require './jane.rb'
 require './kyle.rb'
-#require './ned.rb'
+require './ned.rb'
 
 
 
@@ -86,18 +86,32 @@ def pagefooter
   "</body></html>"
 end
 
+@storylines = [Kyle, Jane, 
+		#Hamster, 
+		Ned]
+tmp = {}
+@storylines.each do |e| tmp[e.name.downcase.to_sym] = e; end
+@storylines = tmp
+
 def pagebody path
   #this is where the magic will happen :3
   
-  return 'welcome to a new game of GARK. <a href="/start">start here</a>' if path == '' #replace this later with what we want the start page to be ('select your character'?)
-  
+  if path == '' or path == "/"
+    puts "fuck your faces"
+    ret = '<h1>welcome to a new game of GARK.</h1>' #replace this later with what we want the start page to be ('select your character'?)
+    @storylines.keys.each do |s|
+      ret << "<a href=#{s.to_s}/start>#{s.to_s.capitalize}</a> "
+    end
+    return ret
+  end
   puts "looking up #{path}"
+  story, node = path.split("/")
   #find the correct node for shit
-  node = path.to_sym
-  return 'unknown node' unless node
+  page = @storylines[story.to_sym].pages[node.to_sym]
+  return 'unknown node' unless page
    #this exception handling could afford some cleanup
   
-  ret = Kyle.pages[node].render
+  ret = page.render
   ret = ret.gsub "\n", '<br>'+"\n"
   ret = ret.gsub "\    ", '&nbsp;&nbsp;&nbsp;&nbsp;'
   ret << '<br><br>'
