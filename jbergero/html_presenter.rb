@@ -78,7 +78,7 @@ end
 def pagebody path
   #this is where the magic will happen :3
   
-  return 'welcome to a new game of GARK' if path == '' #replace this later with what we want the start page to be ('select your character'?)
+  return 'welcome to a new game of GARK. <a href="yourbedroom">start here</a>' if path == '' #replace this later with what we want the start page to be ('select your character'?)
   
   #find the correct node for shit
   #WIP!
@@ -98,10 +98,14 @@ def pagebody path
   @text = node[:text]
   @options = node[:options]
   
+  eval node[:code]
+  
   ret << @text
   @options.each do |opt|
     ret << "<a href='#{opt.to_s}'>#{opt}</a>"
   end
+  
+  ret << "cash = #{$money}"
   
   ret
 end
