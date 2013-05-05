@@ -36,6 +36,29 @@ Exactly 4 hours and 3 minutes later, a foot descends onto you, splattering you a
 <<display "In Cage">>
 
 
+:: Put Back In Cage
+A hand swoops down and plucks you from the floor. You hear the stilted mnemonic "Squiggles!" as you're carried towards your cage.
+
+<<if $hamsterCageDestroyed>>
+	But HA! Your cage lies in shambles on the floor.
+	"Squig-GLES! ... CAT!!!"
+	
+	You're deposited on a table in the bedroom. The giant jailkeeper spirals off in a heated pursuit. Eventually, you hear a faint "Mraww!" and the click of a door.
+
+	The cat is outside. 
+	<<silently>>
+		<<set $catLocation = "Outside">>
+	<<endsilently>>
+	<<actions "Bedroom">>
+<<else>>
+	The hand deposits you unceremoniously into your soiled confines, shutting the door behind.
+	<<silently>>
+		<<set $hamsterCageOpen = false>>
+	<<endsilently>>
+	<<actions "In Cage">>
+<<endif>>
+
+
 :: Stay In Cage
 You huddle in the corner of the cage, nibbling on a pellet and staring at your running wheel.
 
@@ -52,47 +75,66 @@ Mortified and still wheelbound, you continue to run forwards until the wheel hit
 <<silently>>
 	<<set $hamsterCageDestroyed = true>>
 <<endsilently>>
-<<actions "Bedroom">>
+<<display "Bedroom">>
 
 
 :: Hallway
-You're in the hallway.
+You're in the hallway.
+
+<<if $hallwayOccupied>>
+	<<display "Put Back In Cage">>
+<<else>>
+	<<if $catLocation eq "Hallway">>
+		A cat sits on the untended carpet.
+		<<actions "Run From Cat">>
+	<<else>>
+		<<actions "Bedroom" "Living Room">>
+	<<endif>>
+<<endif>>
 
 
 :: Bedroom
 You're in your bedroom.
 
-<<if $catLocation eq "Bedroom">>
-	There is a cat slinking about the room, eyeing you. It makes you uncomfortable.
-
-	<<if $hamsterCageDestroyed>>
-		Your cage lies shattered on the floor.
-	<<else>>
-		<<if $hamsterCageOpen>>
-			Your cage is open.
-			<<actions "Return To Cage" "Run From Cat">>
-		<<else>>
-			<<actions "Run From Cat">>
-		<<endif>>
-	<<endif>>
+<<if $livingRoomOccupied>>
+	<<display "Put Back In Cage">>
 <<else>>
-	<<if $hamsterCageDestroyed>>
-		Your cage lies shattered on the floor.
-		<<actions "Explore Bedroom" "Hallway">>
-	<<else>>
-		<<if (not $hamsterCageDestroyed) and $hamsterCageOpen>>
-			<<actions "Return To Cage" "Explore Bedroom" "Hallway">>
+	<<if $catLocation eq "Bedroom">>
+		There is a cat slinking about the room, eyeing you. It makes you uncomfortable.
+
+		<<if $hamsterCageDestroyed>>
+			Your cage lies shattered on the floor.
 		<<else>>
+			<<if $hamsterCageOpen>>
+				Your cage is open.
+				<<actions "Return To Cage" "Run From Cat">>
+			<<else>>
+				<<actions "Run From Cat">>
+			<<endif>>
+		<<endif>>
+	<<else>>
+		<<if $hamsterCageDestroyed>>
+			Your cage lies shattered on the floor.
 			<<actions "Explore Bedroom" "Hallway">>
+		<<else>>
+			<<if (not $hamsterCageDestroyed) and $hamsterCageOpen>>
+				<<actions "Return To Cage" "Explore Bedroom" "Hallway">>
+			<<else>>
+				<<actions "Explore Bedroom" "Hallway">>
+			<<endif>>
 		<<endif>>
 	<<endif>>
-<<endif>>
-
-
+<<endif>>
 
 
 :: Kitchen
-You're in the kitchen.
+You're in the kitchen.
+
+<<if $kitchenOccupied>>
+	<<display "Put Back In Cage">>
+<<else>>
+
+<<endif>>
 
 
 :: Leap Away From Cat
@@ -150,15 +192,15 @@ Nom nom. You store 6 pellets in your cheek.
 <<silently>>
 	<<set $hamsterPellets = 6>>
 <<endsilently>>
-<<actions "Wander Out Of Cage">>
+<<if $hamsterCageOpen>>
+	<<actions "Wander Out Of Cage">>
+<<else>>
+	<<actions "Stay In Cage">>
+<<endif>>
 
 
 :: Kitchen Walls
 Mold and sawdust dominate your nose. Prickly fiberglass adheres to your coat. "Squeaks" echo in close proximity.
-
-
-:: Living Room
-You're in the living room.
 
 
 :: Leap Onto Cat
@@ -171,6 +213,21 @@ The cat scampers on, disappearing into the kitchen.
 	<<set $catLocation = "Kitchen">>
 <<endsilently>>
 <<display "Living Room">>
+
+
+:: Living Room
+You're in the living room.
+
+<<if $livingRoomOccupied>>
+	<<display "Put Back In Cage">>
+<<else>>
+	<<if $catLocation eq "Living Room">>
+		A cat perks up and stares at you from the sofa.
+		<<actions "Run From Cat" "Approach Cat">>
+	<<else>>
+		<<actions "Kitchen" "Hallway">>
+	<<endif>>
+<<endif>>
 
 
 :: Wander Out Of Cage

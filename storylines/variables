@@ -9,5 +9,11 @@ $hamsterCageDestroyed (true/false) #hamster cage is broken and on floor
 $catLocation (string) #cat is in bedroom
 <<set $catLocation = "living room">>
 
-$hamsterRoomOccupiedByHuman (true/false) #set to true whenever a human player is in a room. The hamster will get picked up and put back in its cage
-<<set $hamsterRoomOccupiedByHuman = false>>
+$livingRoomOccupied (true/false) #set to true whenever a human player is in a room. The hamster will get picked up and put back in its cage
+$kitchenOccupied
+$hallwayOccupied
+$bedroomOccupied
+<<set $livingRoomOccupied = false>>
+<<set $kitchenOccupied = false>>
+<<set $hallwayOccupied = false>>
+<<set $bedroomOccupied = false>>
