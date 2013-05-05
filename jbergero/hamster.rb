@@ -12,7 +12,7 @@ You're in one of the few places you know.),
 :code => '
 	$hamster_cage_open = true
 	$hamster_cage_destroyed = false
-	$cat_location = :livingroom
+	$cat_location = :bedroom
 	$bedroom_occupied = false
 	',
 :options => [:incage]
@@ -106,6 +106,7 @@ l << {
 	if $hallway_occupied
 		@text << %(Someone's in the hallway!)
 		@options << :putbackincage
+	end
 		",
 :options => []
 }
@@ -134,149 +135,125 @@ l << {
 }
 
 l << {
-:name => "",
-:text => "",
-:code => "",
+:name => "Eat Pellets",
+:text => "Nom nom. You store 6 pellets in your cheek.",
+:code => %^
+	$hamster_pellets = 6
+	if $hamster_cage_open
+		options << :wanderoutofcage
+	else
+		options << :stayincage
+	end
+	^,
 :options => []
 }
 
 l << {
-:name => "",
-:text => "",
-:code => "",
+:name => "Wander Out Of Cage",
+:text => %^You wander out of your cage. ^,
+:code => %^
+	if $cat_location == :bedroom
+		@text << "A cat stalks by."
+		@options << :leapontocat << :leapawayfromcat
+	else
+		@options << :bedroom
+	end
+		^,
 :options => []
 }
 
 l << {
-:name => "",
-:text => "",
-:code => "",
+:name => "Leap Away From Cat",
+:text => %^You leap away from the cat and scurry into the middle of the bedroom.^,
+:code => %^^,
+:options => [:bedroom]
+}
+
+l << {
+:name => "Leap Onto Cat",
+:text => %^You brazenly leap towards the cat. Puff! You land in its fur and cling to its back.
+
+Startled, the cat takes off and runs downstairs, zigzagging through a maze of legs. You fall off, landing on a red rug in a room full of people.
+
+The cat scampers on, disappearing into the kitchen.^,
+:code => %^
+	$cat_location = :kitchen
+	^,
+:options => [:livingroom]
+}
+
+l << {
+:name => "Living Room",
+:text => %^You're in the living room.^,
+:code => %^
+	if $living_room_occupied
+		@text << "There's someone in the room!"
+		@options << :putbackincage
+	else
+		if $cat_location = :livingroom
+			@text << "A cat perks up and stares at you from the sofa."
+			@options << :runfromcat << :approachcat
+		else
+			@options << :kitchen << :hallway
+		end
+	end
+		^,
 :options => []
 }
 
 l << {
-:name => "",
-:text => "",
-:code => "",
+:name => "Run From Cat",
+:text => %^^,
+:code => %^
+	$hamster_escape = :hallway if $cat_location == :bedroom
+	$hamster_escape = :livingroom if $cat_location == :hallway
+	$hamster_escape = :kitchen if $cat_location == :livingroom
+	$hamster_escape = :kitchenwalls if $cat_location == :kitchen
+	
+	@text << "You scurry from the bedroom and into the $hamster_escape, dropping a pellet as you go."
+	$hamster_pellets -= 1 if $hamster_pellets > 0
+	@text << "You now have $hamster_pellets pellets"
+	@options << $hamster_escape	
+		^,
 :options => []
 }
 
 l << {
-:name => "",
-:text => "",
-:code => "",
+:name => "Kitchen",
+:text => %^You're in the kitchen.^,
+:code => %^
+	if $kitchenOccupied
+		@text << "Someone's in the kitchen!"
+		@options << :putbackincage
+	else
+	end
+	^,
 :options => []
 }
 
 l << {
-:name => "",
-:text => "",
-:code => "",
+:name => "Kitchen Walls",
+:text => %^
+	Mold and sawdust meet your nose. Prickly fiberglass adheres to your coat. "Squeaks" echo in close proximity. Something metallic brushes your whiskers. Running your teeth across it, the soft nugget nibbles with just the right consistency.
+
+	You've done it. You've discovered the Golden Hamster Pellet! Hampiness will be yours forever.
+^,
+:code => %^^,
 :options => []
 }
 
 l << {
-:name => "",
-:text => "",
-:code => "",
+:name => 'Explore Bedroom',
+:text => %^You fall into a black hole.^,
+:code => '',
 :options => []
 }
 
 l << {
-:name => "",
-:text => "",
-:code => "",
+:name => 'Approach Cat',
+:text => %^The cat disappears. Bloody hard to sniff out a black hole these days.^,
+:code => %^
+	$cat_location = :outside
+	^,
 :options => []
 }
-
-l << {
-:name => "",
-:text => "",
-:code => "",
-:options => []
-}
-
-l << {
-:name => "",
-:text => "",
-:code => "",
-:options => []
-}
-
-l << {
-:name => "",
-:text => "",
-:code => "",
-:options => []
-}
-
-l << {
-:name => "",
-:text => "",
-:code => "",
-:options => []
-}
-
-l << {
-:name => "",
-:text => "",
-:code => "",
-:options => []
-}
-
-l << {
-:name => "",
-:text => "",
-:code => "",
-:options => []
-}
-
-l << {
-:name => "",
-:text => "",
-:code => "",
-:options => []
-}
-
-l << {
-:name => "",
-:text => "",
-:code => "",
-:options => []
-}
-
-l << {
-:name => "",
-:text => "",
-:code => "",
-:options => []
-}
-
-l << {
-:name => "",
-:text => "",
-:code => "",
-:options => []
-}
-
-l << {
-:name => "",
-:text => "",
-:code => "",
-:options => []
-}
-
-l << {
-:name => "",
-:text => "",
-:code => "",
-:options => []
-}
-
-l << {
-:name => "",
-:text => "",
-:code => "",
-:options => []
-}
-

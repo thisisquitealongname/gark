@@ -225,7 +225,7 @@ Tiddler
 p77
 (dp78
 g18
-VYou wander out of your cage. Below, a cat stalks by.\u000a<<silently>>\u000a	<<set $catLocation = "Bedroom">>\u000a<<endsilently>>\u000a<<actions "Leap Onto Cat" "Leap Away From Cat">>
+VYou wander out of your cage. Below, a cat stalks by.\u000a<<silently>>\u000a	<<set $catLocation = "Bedroom">>\u000a<<endsilently>>\u000a<<actions "Leap Onto Cat" "Leap Away From Cat">>\u000a
 p79
 sg20
 (lp80
@@ -547,7 +547,7 @@ VHallway
 p173
 sbsa(dp174
 g12
-I00
+I01
 sg13
 (lp175
 F621.25
@@ -558,7 +558,7 @@ Tiddler
 p176
 (dp177
 g18
-V<<silently>>\u000a	<<if $catLocation eq "Bedroom">>\u000a		<<set $hamsterEscape = "Hallway">>\u000a	<<endif>>\u000a	\u000a	<<if $catLocation eq "Hallway">>\u000a		<<set $hamsterEscape = "Living Room">>\u000a	<<endif>>\u000a\u000a	<<if $catLocation eq "Living Room">>\u000a		<<set $hamsterEscape = "Kitchen">>\u000a	<<endif>>\u000a\u000a	<<if $catLocation eq "Kitchen">>\u000a		<<set $hamsterEscape = "Kitchen Walls"\u000a	<<endif>>\u000a\u000a<<endsilently>>\u000a	You scurry from the bedroom and into the <<print $hamsterEscape>>, dropping a pellet as you go.\u000a<<silently>>\u000a	<<if $hamsterPellets gt 0>>\u000a		<<set $hamsterPellets = $hamsterPellets - 1>>\u000a	<<endif>>\u000a<<endsilently>>\u000aYou now have <<print $hamsterPellets>> pellets.\u000a\u000a<<if $catLocation eq "Bedroom>>\u000a	<<display "Hallway">>\u000a<<endif>>\u000a\u000a<<if $catLocation eq "Hallway">>\u000a	<<display "Kitchen">>\u000a<<endif>>\u000a\u000a<<if $catLocation eq "Kitchen">>\u000a	<<display "Kitchen Walls">>\u000a<<endif>>
+V<<silently>>\u000a	<<if $catLocation eq "Bedroom">>\u000a		<<set $hamsterEscape = "Hallway">>\u000a	<<endif>>\u000a	\u000a	<<if $catLocation eq "Hallway">>\u000a		<<set $hamsterEscape = "Living Room">>\u000a	<<endif>>\u000a\u000a	<<if $catLocation eq "Living Room">>\u000a		<<set $hamsterEscape = "Kitchen">>\u000a	<<endif>>\u000a\u000a	<<if $catLocation eq "Kitchen">>\u000a		<<set $hamsterEscape = "Kitchen Walls"\u000a	<<endif>>\u000a\u000a<<endsilently>>\u000a	You scurry from the bedroom and into the <<print $hamsterEscape>>, dropping a pellet as you go.\u000a<<silently>>\u000a	<<if $hamsterPellets gt 0>>\u000a		<<set $hamsterPellets = $hamsterPellets - 1>>\u000a	<<endif>>\u000a<<endsilently>>\u000aYou now have <<print $hamsterPellets>> pellets.\u000a\u000a<<if $catLocation eq "Bedroom">>\u000a	<<display "Hallway">>\u000a<<endif>>\u000a\u000a<<if $catLocation eq "Hallway">>\u000a	<<display "Kitchen">>\u000a<<endif>>\u000a\u000a<<if $catLocation eq "Kitchen">>\u000a	<<display "Kitchen Walls">>\u000a<<endif>>
 p178
 sg20
 (lp179
@@ -587,8 +587,8 @@ g12
 I00
 sg13
 (lp186
-F922.5
-aF361.25
+F923.75
+aF360.0
 asg15
 (itiddlywiki
 Tiddler
@@ -624,8 +624,8 @@ g12
 I00
 sg13
 (lp197
-F827.5
-aF570.0
+F898.75
+aF631.25
 asg15
 (itiddlywiki
 Tiddler
