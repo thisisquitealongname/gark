@@ -1,3 +1,7 @@
+
+#require './twine_parser.rb'
+require './new_ruby_nodes.rb'
+
 def pageheader
   %[
 <html !DOCTYPE=html>
@@ -80,18 +84,26 @@ def pagebody path
   #WIP!
   node = nil
   @master_node_list.each do |x|
-    next unless names_match(path, x.nodename)
+    #next unless names_match(path, x.nodename)
+    next unless names_match(path, x[:name])
     node = x
     break
   end
+  return 'unknown node' unless node
   
-  return twine2html(node.text) if node
+  #return twine2html(node.text) if node
   
-  %[
-	Not sure what doooooooooooooooooooooo!!!!!
-  ]
+  ret = ''
   
+  @text = node[:text]
+  @options = node[:options]
   
+  ret << @text
+  @options.each do |opt|
+    ret << "<a href='#{opt.to_s}'>#{opt}</a>"
+  end
+  
+  ret
 end
 
 #compares two strings, ignoring case and anything non-alphanumeric
@@ -109,5 +121,30 @@ def names_match s1, s2
 end
 
 def twine2html instring
-  instring
-end
+  ret = ''
+  instring.each_line do |line|
+    if (line.start_with? '<<')
+      content = line[2..-4]
+      ret << "content: #{content} <br>"
+    else
+      ret << "<p>#{line}</p>"
+    end#if
+  end#instring.each
+  ret
+end#twine2html
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
