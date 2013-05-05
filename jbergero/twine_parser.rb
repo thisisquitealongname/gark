@@ -2,7 +2,7 @@
 
 #incomplete object
 #just takes in some text arbitrarily for now
-class TwineParselet
+class TwineNode
   
   #public methods to access instance variables
   attr_accessor :my_text, :nodename
@@ -15,7 +15,7 @@ class TwineParselet
     @nodename = nil
   end
   
-  #cram another line of .tw text into here
+  #cram another line of .tw text into this node
   def cram line
     unless @nodename
       @nodename = line[3..-1].strip
@@ -38,25 +38,25 @@ end
 
 
 File.open("../hamster.txt", "r") do |infile|
-  node = TwineParselet.new
+  node = TwineNode.new
   while (line = infile.gets)
-    if (line.index "::")
+    if (line.start_with? "::")
       node.wrapup @master_node_list
-      node = TwineParselet.new
+      node = TwineNode.new
     end
     node.cram line
   end
-  node.wrapup @master_node_list #srsly ruby? I have to hand this in as an argument because TwineParselet don't know how to touch a global variable?
+  node.wrapup @master_node_list #srsly ruby? I have to hand this in as an argument because TwineNode don't know how to touch a global variable?
 end
   
-=begin
+#=begin
 @master_node_list.each do |x|
   
   puts x.nodename
   puts
-  puts x.my_text
+  #puts x.my_text
   puts
   puts '========'
   puts
   
-=end
+end

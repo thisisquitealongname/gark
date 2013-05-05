@@ -74,48 +74,40 @@ end
 def pagebody path
   #this is where the magic will happen :3
   
-  return 'welcome to a new game of GARK' if path == ''
+  return 'welcome to a new game of GARK' if path == '' #replace this later with what we want the start page to be ('select your character'?)
   
   #find the correct node for shit
   #WIP!
   node = nil
   @master_node_list.each do |x|
-    puts ".#{path}. =? .#{x.nodename}."
-    next unless path.upcase == x.nodename.upcase
+    next unless names_match(path, x.nodename)
     node = x
     break
   end
   
-  return node.text if node
+  return twine2html(node.text) if node
   
   %[
-	<span id="mask">
-
-	</span>
-		<div id="header">
-			<h4>Remember when you were young? The world was wide open, love was just
-				around the corner. Remember...? It was great, wasn't it? 
-				Man, life used to glow. <br><br> But look at you now. You're not young anymore. 
-				You'll never feel wide-eyed again! Unless you play..</h4>
-			<h1>Gark's Magical High-School Adventure.</h1>
-		</div>
-		
-		<div id="menu">
-			Name: $playername <br>
-			Moves: $move <br>
-			Items: for each $item in $items... <br>
-			<input name="btnReset" type="reset" value="Restart">
-		</div>
-		<div id="main">
-			<div id="story">
-			You step out onto the porch. Jane is there, inclined against a fencepost. 
-			Smoke twirls away from an ember at the tip of her fingers.
-			Her eyes flit across you.
-			</div>
-			<span class="choice"><a href="meethergaze"> Meet her gaze.</a></span> 
-			<span class="choice"><a href="strollpast">Stroll past.</a></span>
-		</div>
+	Not sure what doooooooooooooooooooooo!!!!!
   ]
   
   
+end
+
+#compares two strings, ignoring case and anything non-alphanumeric
+#for example "Start room" should match "start_room" and even 'startroom'
+def names_match s1, s2
+  t1 = ''
+  t2 = ''
+  s1.each_char do |c|
+    t1 << c if c.match /(\d|[a-zA-Z])/
+  end
+  s2.each_char do |c|
+    t2 << c if c.match /(\d|[a-zA-Z])/
+  end
+  t1.upcase == t2.upcase
+end
+
+def twine2html instring
+  instring
 end
