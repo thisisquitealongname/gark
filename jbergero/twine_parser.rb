@@ -4,7 +4,11 @@
 #just takes in some text arbitrarily for now
 class TwineParselet
   
+  #public methods to access instance variables
   attr_accessor :my_text, :nodename
+  def text#so that we may call node.text instead of node.my_text
+    @my_text
+  end
   
   def initialize
     @my_text = ''
@@ -14,7 +18,7 @@ class TwineParselet
   #cram another line of .tw text into here
   def cram line
     unless @nodename
-      @nodename = line[3..-1]
+      @nodename = line[3..-1].strip
       raise "hell" unless line[0..2] == ':: '
       return
     end
@@ -26,7 +30,7 @@ class TwineParselet
   def wrapup nodelist
     
     #lol lazy (much more work needs to be done in this method)
-    nodelist << self 
+    nodelist << self unless @nodename == nil
   end
   
 end
