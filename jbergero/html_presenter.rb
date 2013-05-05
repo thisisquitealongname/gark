@@ -80,7 +80,8 @@ def pagebody path
   #WIP!
   node = nil
   @master_node_list.each do |x|
-    next unless path.equalsignorecase x.nodename
+    puts ".#{path}. =? .#{x.nodename}."
+    next unless path.upcase == x.nodename.upcase
     node = x
     break
   end
