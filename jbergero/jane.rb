@@ -182,7 +182,6 @@ l << {
 
 l << {
 :name => 'Observe Idly',
-:location => ''
 :text => %^
 	You stand back-to-brick next to 'issa, shoulders brushing innocuously. Heavy drags, foggy breath.
 	^,
@@ -191,17 +190,22 @@ l << {
 }
 
 l << {
-:name => '',
-:location => ''
+:name => 'Class',
+:location => :class
 :text => %^^,
 :code => %^^,
 :options => []
 }
 
 l << {
-:name => '',
+:name => 'Doubt',
 :location => ''
-:text => %^^,
+:text => %^
+	You fall back onto the La-Z-Boy opine "Sometimes I feel like I'm not the main character in my own story. I have the unshakeable sense that every piece of my life has already been played out elsewhere, or even right here."
+
+	"But, Lovely, you are the center of the venn diagram of everything you've been exposed to," Larissa began soothingly, "Sure, all the parts of your life have been experienced by others--"
+	"But you're the only person that all of what happens to you happens to," you spit, "I know. I thought that as soon as I said it. I just needed to bitch."
+^,
 :code => %^^,
 :options => []
 }
