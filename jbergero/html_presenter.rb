@@ -13,6 +13,10 @@ class Storyline
       @pages[name].text = text;
       @pages[name].links = links;
       @pages[name].block = block;
+      if links.member? :location
+        @pages[name].location = links[:location]
+        links.delete :location
+      end
     end
   end
   
@@ -28,6 +32,7 @@ class Page
   attr_accessor :text
   attr_accessor :links
   attr_accessor :block
+  attr_accessor :location
   
   def render
     paragraphs = []
