@@ -1,3 +1,6 @@
+require 'kramdown'
+
+
 class Storyline
   class << self
     attr_accessor :pages
@@ -7,7 +10,7 @@ class Storyline
       @pages[name] = Page.new
       @pages[name].text = text;
       @pages[name].block = block;
-      puts name, links
+      
       if links.kind_of? Hash
         @pages[name].links = links;
         if links.member? :location
@@ -35,9 +38,11 @@ class Page
     paragraphs<<@text;
     
     paragraphs += (Enumerator.new &@block).to_a unless @block == nil
-    ret = paragraphs.join "<br>";
+    ret = paragraphs.join("\n")
+    #ret = Kramdown::Document.new(ret, :auto_ids => false).to_html
     ret << "<hr><ul>"
     @links.each_pair do |link, flavour| 
+       flavour = link.to_s unless flavour
        ret << "<li><a href='#{link}'>#{flavour}</a></li>"
     end
     ret << '</ul>'

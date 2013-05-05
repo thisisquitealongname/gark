@@ -97,7 +97,10 @@ def pagebody path
   return 'unknown node' unless node
    #this exception handling could afford some cleanup
   
-  ret = "<pre>" + Jane.pages[node].render + "</pre>"
+  ret = Kyle.pages[node].render
+  ret = ret.gsub "\n", '<br>'+"\n"
+  ret = ret.gsub "\    ", '&nbsp;&nbsp;&nbsp;&nbsp;'
+  ret << '<br><br>'
   ret << "<hr>"
   
   #ret << "cash = #{$money}"
@@ -111,8 +114,6 @@ def render_node node
   eval node[:code]
   
   #node body
-  ret = @text.gsub "\n", '<br>'
-  ret << '<br><br>'
   
   ret << path_links(node)
   

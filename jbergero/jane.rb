@@ -30,21 +30,18 @@ page :sam,
 page :pillow,
 	%^The [sun] shifts 5 degrees and your pillow remains comfortable.^,	
 	{:location => :bedroom,
-	:sun => "Dream in a hazy dayz"} do
-		if $hamster_location == :bedroom
-			@options.merge! :chasethehamster => "You hear scurrying. Fuck. You'd better go chase the hamster."
-		else
-			@options.merge! :clockticks => "The clock ticks."
+	:sun => "Dream in a hazy dayz",
+	:clockticks => "The clock ticks"} do
+		if @Hamster.location == :bedroom
+			@options.merge! :chasethehamster => "You hear scurrying. Fuck. Maybe you should go chase the hamster."
 		end
 	end
 
 page :sun,
-	%^
-	You're looking up at the sky. There's a blank expanse all around. You are aware that in microscope view there are blowing fields of wheat below your feet. The sun beads sweat out of you, slowly sucking your life. Purple and green whirlwinds tear the edges of reality apart in the distance. Somewhere, a wall chinks. A *Goat on a Pole* bounces with firm determination towards nothing.
-	Trees rattle in the empty wind.
-	You remember your future.
-	But you won't, when you wake up.
-	^,
+	%^You're looking up at the sky. There's a blank expanse all around. You are aware that in microscope view there are blowing fields of wheat below your feet. The sun beads sweat out of you, slowly sucking your life. Purple and green whirlwinds tear the edges of reality apart in the distance. Somewhere, a wall chinks. A *Goat on a Pole* bounces with firm determination towards nothing.
+Trees rattle in the empty wind.
+You remember your future.
+But you won't, when you wake up.^,
 	{:pillow => "<< Go back"}
 
 page :clockticks,
