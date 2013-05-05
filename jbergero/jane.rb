@@ -162,25 +162,32 @@ l << {
 :name => 'Talk About The Weather',
 :text => %^
 	Giggling, Larissa grabs your forearm.
+	
+	"Sunburns sting, Jane."
 	^,
 :code => %^^,
 :options => [:smokers]
 }
 
 l << {
-:name => '',
-:location => ''
-:text => %^^,
+:name => 'Toby, Take A Bow',
+:text => %^
+	You fix your eyes on her in a beam of visual cues. Your left leg slips behind your right, transforming into a grand flourish before her. 
+	
+	Yeah, that was probably abnormal. Fight the blush.
+	^,
 :code => %^^,
-:options => []
+:options => [:smokers]
 }
 
 l << {
-:name => '',
+:name => 'Observe Idly',
 :location => ''
-:text => %^^,
+:text => %^
+	You stand back-to-brick next to 'issa, shoulders brushing innocuously. Heavy drags, foggy breath.
+	^,
 :code => %^^,
-:options => []
+:options => [:smokers]
 }
 
 l << {
