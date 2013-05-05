@@ -8,7 +8,9 @@ page :start,
 
 	You roll over, grunt, unwedge your undies, and fall back asleep, drooling, into your [pillow].
 	^,
-     :bell => "Remember the bell", :sam => "Be annoyed by the thought of your brother", :pillow => "Refuse wakefulness the pleasure of having you"
+     
+	 {:location => :bedroom,
+	 :bell => "Remember the bell", :sam => "Be annoyed by the thought of your brother", :pillow => "Refuse wakefulness the pleasure of having you"}
 
 page :escape,
   "this is some text"
@@ -16,37 +18,31 @@ page :escape,
     yield "It's morning. You've slept in past the [bell] again."
     if Hamster.escaped
   end
-  
 
-l << {
-:name => :start,
-:location => :bedroom,
-:text => %^
-	It's morning. You've slept in past the [bell] again.
-
-	Your Dad has already taken your brother [Sam] to school. Your mother, bless her prozac-munching heart, wouldn't deign to bother you. Not anymore. You get up on your own time. If you get up, if there's something good going on.
-
-	You roll over, grunt, unwedge your undies, and fall back asleep, drooling, into your [pillow].
+page :bell,
+	%^
+	The bell at school is a toothless riff snatched from Brian Wilson's ancient surf-pop. Every day you cringe inwardly as it tills the garden of children you're entangled with. You wish it was Morrisey, Beirut, or even Bach. You'd never let anyone at school know this, though. Never let any of them know you care.
 	^,
-:code => %^
+	{:start}
+
+page :sam,
+	%^
+	^What a little twerp. He has that wretched hamster he never plays with, except to throw around by its neck. You want to throttle him, sometimes.
 	^,
-:options => {:bell => "Remember the bell", :sam => "Be annoyed by the thought of your brother", :pillow => "Refuse wakefulness the pleasure of having you"}
-}
-
-l << {
-:name => :bell,
-:text => %^The bell at school is a toothless riff snatched from Brian Wilson's ancient surf-pop. Every day you cringe inwardly as it tills the garden of children you're entangled with. You wish it was Morrisey, Beirut, or even Bach. You'd never let anyone at school know this, though. Never let any of them know you care.^,
-:code => %^^,
-:options => [:start]
-}
-
-l << {
-:name => :sam,
-:text => %^What a little twerp. He has that wretched hamster he never plays with, except to throw around by its neck. You want to throttle him, sometimes.^,
-:code => %^^,
-:options => [:start]
-}
-
+	{:start}
+	
+page ,
+	%^
+	^,
+	
+page :pillow,
+	%^The [sun] shifts 5 degrees and your pillow remains comfortable.^,	
+	{:location => :bedroom,
+	:start},
+	do
+	
+	end
+	
 l << {
 :name => :pillow,
 :location => :bedroom,
