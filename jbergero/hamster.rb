@@ -66,11 +66,12 @@ Mortified and still wheelbound, you continue to run forwards until the wheel hit
 
 l << {
 :name => "Bedroom",
+:location => :bedroom,
 :text => "You're in your bedroom.
 	
 	",
 :code => "
-	if $bedroom_occupied
+	if $jane_location == :bedroom || $larissa_location == :bedroom
 		@text << %(Someone's in the bedroom!)
 		@options << :putbackincage
 	else	
@@ -101,13 +102,24 @@ l << {
 
 l << {
 :name => "Hallway",
-:text => "You're in the hallway.",
-:code => "
-	if $hallway_occupied
+:location => :hallway,
+:text => "You're in the hallway.
+
+",
+:code => %^
+	if $jane_location == :hallway || $larissa_location == :hallway
 		@text << %(Someone's in the hallway!)
 		@options << :putbackincage
+	else
+		if $cat_location == :hallway
+			@text << "A cat sits on the untended carpet.
+			"
+			@options << :runfromcat
+		else
+			@options << :bedroom << :livingroom
+		end
 	end
-		",
+		^,
 :options => []
 }
 
@@ -184,9 +196,10 @@ The cat scampers on, disappearing into the kitchen.^,
 
 l << {
 :name => "Living Room",
+:location => :livingroom,
 :text => %^You're in the living room.^,
 :code => %^
-	if $living_room_occupied
+	if $jane_location == :livingroom || $larissa_location == :livingroom
 		@text << "There's someone in the room!"
 		@options << :putbackincage
 	else
@@ -205,12 +218,15 @@ l << {
 :name => "Run From Cat",
 :text => %^^,
 :code => %^
-	$hamster_escape = :hallway if $cat_location == :bedroom
-	$hamster_escape = :livingroom if $cat_location == :hallway
-	$hamster_escape = :kitchen if $cat_location == :livingroom
-	$hamster_escape = :kitchenwalls if $cat_location == :kitchen
+#	$hamster_escape = :hallway if $cat_location == :bedroom
+#	$hamster_escape = :livingroom if $cat_location == :hallway
+#	$hamster_escape = :kitchen if $cat_location == :livingroom
+#	$hamster_escape = :kitchenwalls if $cat_location == :kitchen
+	
+	$hamster_escape = {:bedroom => :hallway, :hallway => :livingroom, :livingroom => :kitchen, :kitchen => :kitchenwalls}[$cat_location]
 	
 	@text << "You scurry from the bedroom and into the $hamster_escape, dropping a pellet as you go."
+	$hamster_pellets |= 0
 	$hamster_pellets -= 1 if $hamster_pellets > 0
 	@text << "You now have $hamster_pellets pellets"
 	@options << $hamster_escape	
@@ -220,9 +236,10 @@ l << {
 
 l << {
 :name => "Kitchen",
+:location => :kitchen,
 :text => %^You're in the kitchen.^,
 :code => %^
-	if $kitchenOccupied
+	if $jane_location == :kitchen || $larissa_location == :kitchen
 		@text << "Someone's in the kitchen!"
 		@options << :putbackincage
 	else
@@ -233,6 +250,7 @@ l << {
 
 l << {
 :name => "Kitchen Walls",
+:location => :kitchenwalls,
 :text => %^
 	Mold and sawdust meet your nose. Prickly fiberglass adheres to your coat. "Squeaks" echo in close proximity. Something metallic brushes your whiskers. Running your teeth across it, the soft nugget nibbles with just the right consistency.
 

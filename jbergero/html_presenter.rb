@@ -50,7 +50,7 @@ def pageheader
 	<script type="text/javascript">
 	</script>
 	
-	<style type="text/css">
+	<!--style type="text/css">
 		html,body{
 		margin:0;
 		padding:0;
@@ -105,7 +105,7 @@ def pageheader
 			padding-bottom: 10px;
 			}
 			
-	</style>
+	</style-->
 </head>
 <body>
   ]
@@ -128,7 +128,7 @@ def pagebody path
   ret = render_node node
   ret << "<hr>"
   
-  ret << "cash = #{$money}"
+  #ret << "cash = #{$money}"
   
   ret
 end
@@ -138,14 +138,27 @@ def render_node node
   @options = node[:options].clone
   eval node[:code]
   
-  ret = "<pre>#{@text}</pre>"
-  @options.each do |opt|
-    ret << "<a href='#{opt.to_s}'>#{opt}</a>"
-  end
+  #node body
+  ret = @text.gsub "\n", '<br>'
+  ret << '<br><br>'
+  
+  ret << path_links(node)
   
   ret  
 end
 
+#spits out html links to the next nodes we can reach
+def path_links node
+  
+  ret = '<ul>'
+  @options.each do |opt|
+    ret << "<li><a href='#{opt}'>#{find_node(opt.to_s)[:name]}</a></li>"
+  end
+  ret << "</ul>"
+  
+  
+  
+end
 
 def find_node blah
   @master_node_list.each do |x|
