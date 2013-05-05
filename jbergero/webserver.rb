@@ -1,6 +1,5 @@
 require 'webrick'
 require './html_presenter.rb'
-require './twine_parser.rb'
 
 #create the http server object
 server = WEBrick::HTTPServer.new :Port => 8005
@@ -10,9 +9,7 @@ trap 'INT' do server.shutdown end
 server.mount_proc '/' do |req, res|
   res.body = pageheader +
   "
-  <a href='#{Random.rand 9999}'>link to another page</a>
-  <br>
-  <a href='start'>start</a>
+  <a href='yourbedroom'>start</a>
   <br>
   
   <hr>
@@ -55,9 +52,9 @@ def render_page request_metavars
     #TODO: escort user back to home page or wherever they're supposed to be
     ret << 'you cheater'
   else 
-     ret << (pagebody requested_path)
+     #ret << (pagebody requested_path)
   end
-  
+  ret << (pagebody requested_path)
   
   ret
   

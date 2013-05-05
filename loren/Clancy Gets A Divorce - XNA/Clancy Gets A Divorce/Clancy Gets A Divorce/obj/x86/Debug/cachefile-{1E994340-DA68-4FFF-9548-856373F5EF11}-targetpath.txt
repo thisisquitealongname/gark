@@ -1,0 +1,2 @@
+Content\imgUgh.xnb
+Content\imgClancyBat.xnb

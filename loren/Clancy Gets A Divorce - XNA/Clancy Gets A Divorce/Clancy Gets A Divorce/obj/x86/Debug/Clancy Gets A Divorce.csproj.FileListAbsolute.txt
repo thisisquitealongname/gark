@@ -1,0 +1,8 @@
+T:\tojam\gark\Clancy Gets A Divorce\Clancy Gets A Divorce\Clancy Gets A Divorce\bin\x86\Debug\Clancy Gets A Divorce.exe
+T:\tojam\gark\Clancy Gets A Divorce\Clancy Gets A Divorce\Clancy Gets A Divorce\bin\x86\Debug\Clancy Gets A Divorce.pdb
+T:\tojam\gark\Clancy Gets A Divorce\Clancy Gets A Divorce\Clancy Gets A Divorce\obj\x86\Debug\ResolveAssemblyReference.cache
+T:\tojam\gark\Clancy Gets A Divorce\Clancy Gets A Divorce\Clancy Gets A Divorce\obj\x86\Debug\Microsoft.Xna.Framework.RuntimeProfile.txt
+T:\tojam\gark\Clancy Gets A Divorce\Clancy Gets A Divorce\Clancy Gets A Divorce\obj\x86\Debug\Clancy Gets A Divorce.exe
+T:\tojam\gark\Clancy Gets A Divorce\Clancy Gets A Divorce\Clancy Gets A Divorce\obj\x86\Debug\Clancy Gets A Divorce.pdb
+T:\tojam\gark\Clancy Gets A Divorce\Clancy Gets A Divorce\Clancy Gets A Divorce\bin\x86\Debug\Content\imgUgh.xnb
+T:\tojam\gark\Clancy Gets A Divorce\Clancy Gets A Divorce\Clancy Gets A Divorce\bin\x86\Debug\Content\imgClancyBat.xnb
