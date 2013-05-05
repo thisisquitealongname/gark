@@ -10,6 +10,15 @@
       <Output>T:\tojam\gark\Clancy Gets A Divorce\Clancy Gets A Divorce\Clancy Gets A Divorce\bin\x86\Debug\Content\imgUgh.xnb</Output>
       <Time>2013-05-05T02:46:05.2245767-04:00</Time>
     </Item>
+    <Item>
+      <Source>clancybat.png</Source>
+      <Name>imgClancyBat</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>T:\tojam\gark\Clancy Gets A Divorce\Clancy Gets A Divorce\Clancy Gets A Divorce\bin\x86\Debug\Content\imgClancyBat.xnb</Output>
+      <Time>2013-05-05T03:15:53.1368395-04:00</Time>
+    </Item>
     <BuildSuccessful>true</BuildSuccessful>
     <Settings>
       <TargetPlatform>Windows</TargetPlatform>
