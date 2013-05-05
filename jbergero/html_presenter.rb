@@ -1,8 +1,8 @@
 
 
 require './new_ruby_nodes.rb'
-#require './hamster.rb'
-#require './jane.rb'
+require './hamster.rb'
+require './jane.rb'
 require './kyle.rb'
 #require './ned.rb'
 
@@ -92,7 +92,7 @@ def pagebody path
   return 'unknown node' unless node
    #this exception handling could afford some cleanup
   
-  ret = "<pre>" + Kyle.pages[node].render + "</pre>"
+  ret = "<pre>" + Jane.pages[node].render + "</pre>"
   ret << "<hr>"
   
   #ret << "cash = #{$money}"

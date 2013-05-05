@@ -1,23 +1,25 @@
 class Storyline
   class << self
+    attr_accessor :pages
+    
     def page(name, text="", links={}, &block) #shold this be inside of Storyline??
       @pages = {} if @pages == nil #sets this on whatgever class we're called inside of
       @pages[name] = Page.new
       @pages[name].text = text;
-      @pages[name].links = links;
       @pages[name].block = block;
-      if links.member? :location
-        @pages[name].location = links[:location]
-        links.delete :location
+      puts name, links
+      if links.kind_of? Hash
+        @pages[name].links = links;
+        if links.member? :location
+          @pages[name].location = links[:location]
+          links.delete :location
+        end
+      elsif links.kind_of? Symbol
+          @pages[name].links = { links => "<< Go back"} #hack solution
       end
     end
-  end
   
-  attr_accessor :pages
-  
-  def render(page)
-    block
-  end
+  end  
 end
 
 
@@ -36,7 +38,7 @@ class Page
     ret = paragraphs.join "<br>";
     ret << "<hr><ul>"
     @links.each_pair do |link, flavour| 
-       ret << "<li><a href='#{link}'>#{flavour}</a></li>" "#{flavour} -> #{link}"
+       ret << "<li><a href='#{link}'>#{flavour}</a></li>"
     end
     ret << '</ul>'
   end

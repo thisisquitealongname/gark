@@ -1,3 +1,6 @@
+
+require './nodes.rb'
+
 class Jane < Storyline
 attr_accessor :heard_about_party
 
@@ -10,41 +13,29 @@ page :start,
 	^,
      
 	 {:location => :bedroom,
-	 :bell => "Remember the bell", :sam => "Be annoyed by the thought of your brother", :pillow => "Refuse wakefulness the pleasure of having you"}
+	 :bell => "Remember the bell", :sam => "Be annoyed by the thought of your brother",
+           :pillow => "Refuse wakefulness the pleasure of having you"}
 
-page :escape,
-  "this is some text"
-  do  #block?
-    yield "It's morning. You've slept in past the [bell] again."
-    if Hamster.escaped
-  end
 
 page :bell,
 	%^
 	The bell at school is a toothless riff snatched from Brian Wilson's ancient surf-pop. Every day you cringe inwardly as it tills the garden of children you're entangled with. You wish it was Morrisey, Beirut, or even Bach. You'd never let anyone at school know this, though. Never let any of them know you care.
 	^,
-	{:start}
+	{:start => "<< Go back"}
 
 page :sam,
-	%^
-	^What a little twerp. He has that wretched hamster he never plays with, except to throw around by its neck. You want to throttle him, sometimes.
-	^,
-	{:start}
-	
-page ,
-	%^
-	^,
+	%^What a little twerp. He has that wretched hamster he never plays with, except to throw around by its neck. You want to throttle him, sometimes.^,
+	{:start => "<< Go back"}
 	
 page :pillow,
 	%^The [sun] shifts 5 degrees and your pillow remains comfortable.^,	
 	{:location => :bedroom,
-	:sun => "Dream in a hazy dayz"},
-	do
+	:sun => "Dream in a hazy dayz"} do
 		if $hamster_location == :bedroom
-			@options.merge! {:chasethehamster => "You hear scurrying. Fuck. You'd better go chase the hamster."}
+			@options.merge! :chasethehamster => "You hear scurrying. Fuck. You'd better go chase the hamster."
 		else
-			@options.merge! {:clockticks => "The clock ticks."}
-		end 
+			@options.merge! :clockticks => "The clock ticks."
+		end
 	end
 
 page :sun,
@@ -54,7 +45,7 @@ page :sun,
 	You remember your future.
 	But you won't, when you wake up.
 	^,
-	:pillow
+	{:pillow => "<< Go back"}
 
 page :clockticks,
 	%^
@@ -63,14 +54,11 @@ page :clockticks,
 	Sleepily mulling over all this for the umpteenth time, you're caught offguard by the sunlight. It momentarily blinds you.
 	
 	The smell of bread wafts through your consciousness. Strange.
-	
-	You set off down the street.
 	^,
-	:offdownthestreet
+	:offdownthestreet => "You set off down the street."
 
 
 page :offdownthestreet,
-
 	%^Tamerlane Avenue is as nondescript as the other 21 streets in your neighbourhood. You've counted all of them several times over. Guilder Crescent is nearby to the south. Holly Street crosses Tamerlane latitudinally. You reflect that it is ironic that suburbs, sold by corporations as "communities", are in fact more alienating than any other human creation. The sprawl is the logical end to the harmonious planned utopian communities of the past. Did the community planners and their cookie-cutters know how isolated it would make you feel?
 
 	You wish you could proffer this profoundness to someone. Well, Larissa will understand! You smile a bit at the thought. It's 11:23am.
@@ -91,7 +79,6 @@ page :directroutetoschool,
 	^,
 	:location => :davidroad,
 	:school => "Bank rightwards."
-
 
 page :ghetto,
 	%^
@@ -147,7 +134,7 @@ page :smokers,
 
 	That's all you have for each other. To the world at large, you're just friends. That's your comfort-zone.
 	^,
-	:location => :smokers
+	:location => :smokers,
 	:met_her => "Remember meeting Larissa", :talkabouttheweather => "Ask about the thunder you can scent rolling in", :tobytakeabow => "Bow with flourish to your secret lover", :observeidly => "Practice your suave"
 
 
@@ -157,7 +144,7 @@ page :talkabouttheweather,
 	
 	"Sunburns sting, Jane."
 	^,
-	:smokers
+	:smokers => "Sulk back"
 
 
 page :tobytakeabow,
