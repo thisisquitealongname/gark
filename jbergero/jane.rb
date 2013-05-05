@@ -1,6 +1,22 @@
-# coding: utf-8
-@jane_node_list = []
-l = @jane_node_list
+class Jane < Storyline
+attr_accessor :heard_about_party
+
+page :start,
+  %^It's morning. You've slept in past the [bell] again.
+
+	Your Dad has already taken your brother [Sam] to school. Your mother, bless her prozac-munching heart, wouldn't deign to bother you. Not anymore. You get up on your own time. If you get up, if there's something good going on.
+
+	You roll over, grunt, unwedge your undies, and fall back asleep, drooling, into your [pillow].
+	^,
+     :bell => "Remember the bell", :sam => "Be annoyed by the thought of your brother", :pillow => "Refuse wakefulness the pleasure of having you"
+
+page :escape,
+  "this is some text"
+  do  #block?
+    yield "It's morning. You've slept in past the [bell] again."
+    if Hamster.escaped
+  end
+  
 
 l << {
 :name => :start,
@@ -206,3 +222,5 @@ l << {
 :options => []
 }
 
+
+end

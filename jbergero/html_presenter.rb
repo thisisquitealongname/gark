@@ -4,6 +4,44 @@ require './new_ruby_nodes.rb'
 require './hamster.rb'
 @master_node_list = @hamster_node_list
 
+
+class Storyline
+  class << self
+    def page(name, text="", links={}, &block) #shold this be inside of Storyline??
+      @pages = {} if @pages == nil #sets this on whatgever class we're called inside of
+      @pages[name] = Page.new
+      @pages[name].text = text;
+      @pages[name].links = links;
+      @pages[name].block = block;
+    end
+  end
+  
+  attr_accessor :pages
+  
+  def render(page)
+    block
+  end
+end
+
+
+class Page
+  attr_accessor :text
+  attr_accessor :links
+  attr_accessor :block
+  
+  def render
+    paragraphs = []
+    paragraphs<<@text;
+    
+    paragraphs += (Enumerator.new &@block).to_a unless @block == nil
+    puts paragraphs.join "\n";
+    puts ""
+    @links.each_pair do |link, flavour| 
+       puts "#{flavour} -> #{link}"
+    end
+  end
+end
+
 def pageheader
   %[
 <html !DOCTYPE=html>
