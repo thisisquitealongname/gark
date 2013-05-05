@@ -283,44 +283,78 @@ you?"
     I'm feeling kinda tipsy. There's a certain twinkle in her eyes, I think.
 You can tell by the way her lips are, are, like, pulled in a certain direction,
 or... I think. I think. She's looking at me expectantly.~,
-:options => {:kissrejection => "Answer the question.", :janesaslut => "Kiss her."},
+:options => {:kissrejection => "Kiss her.", :janesaslut => "Answer the question."},
 }
 
 l << {
 :name => :escalatefight, 
-:text => %~Police come. Everything is terrible.~,
-:options => {:sagelytasha => "Go talk to Tasha and try to control the damage.", :larissasmad => "Go talk to Larissa and try to control the damage."},
+:text => %~I lunge at Andy again, knocking him to the floor. I have the advantage, I'm
+stronger than this guy. There's no way anyone could push me around, I'm like a
+goddamn armadillo, man. He tries to get up but I jump down on him, sit on his
+chest and just start wailing away. The crowds chants stop, someone tries to
+pull me off but I won't let them.
+    Someone screams. Sirens cry out in the distance.~,
 }
 
 l << {
 :name => :loveless, 
-:text => %~Go upstairs. Drunk dude from science class makin out in your bed. Kick him out.
-They've been through your record connection, are rockin Loveless. Lie down and
-close your eyes.~,
+:text => %~"I...I'm..."
+    I want to apologize to Andy but, man, I just can't bring myself to. All
+I can do is turn away. All I want is to be alone.
+    So I bolt upstairs to my bedroom. The door is closed, muffled music is
+streaming through it. I bust in and see David from science class making out
+with some girl, I dunno who she is, I doubt David does either. "Yo," I say,
+"get the fuck out, man."
+    Once they stumble out of the room I shut the door behind them. They've been
+through my record collection. They've got side B of Loveless spinning. I leave
+it going. With the lights still on I climb into bed and close my eyes.~,
 }
 
 l << {
 :name => :strungoutandy, 
-:text => %~go inside. Find out Andy made a move on Larissa and it blew up
-in his face. The party winds down. Andy is still a lil strung
-out. You're tired and want to go to sleep, but he still has
-tons of energy so he starts cleaning. Sit with him, drink tea,
-and realize the importance of Friendship.~,
+:text => %~My cigarette is burned practically down to the filter. I throw it to the
+ground and stamp it out.
+    "Thanks for the talk, man," I say to the stranger. "I gotta go...well I
+don't fucking know what I gotta do. But I gotta go do something."
+    I head back indoors. The party's winded down a bit, the music's stopped.
+Andy is on the couch, lying on his side all fetal like. His eyes are wide. He's
+rocking back and forth.
+    I sit down next to him. "Hey buddy," I say, "how's it going?"
+    "Alright I guess. Tried making a move on Larissa, she didn't go for it."
+    "You alright? You wanna talk about it?"
+    "Oh, yeah, fine," he says, sitting up. "C'est la vie. I'm just feeling a
+little wired still. This was some strong shit."
+    Gradually people start shuffling out. The party ends. Andy's still wide
+awake. "You want some tea?" he asks me.
+    It's gotta be, like, 3AM. He makes some tea for us and starts cleaning up.
+I sit there on the couch, bleary-eyed, listening to him talk. I never say a
+word.~,
 }
 
 l << {
 :name => :makenewfriend, 
-:text => %~stay out on the lawn smoking with your new friend. add him on FB
-the next day. It was an okay party after all.
-
-"I don't want to carry my past with me everywhere I go," he says. "At any
-moment I want to be only the person I am right now, as if it came from nothing,
-ex nihilo.~,
+:text => %~My cigarette is burned practically down to the filter. I throw it to the
+ground and stamp it out.
+    The stranger and I stand there in silence for a moment. The night is cold,
+but it's the sense of solitude - the sound only crickets chirping or cars in
+the distance revving their engines, the patches of empty pavement illuminated
+only by flickering streetlights - that makes me shiver. "Got a smoke I could
+bum?" I ask the stranger.
+    "I don't want to carry my past with me everywhere I go," he says at one
+point. "At any moment I want to be only the person I am right now, as if it came
+from nothing, ex nihilo."
+    We stand out there in the night, smoking, not smoking. People begin to
+leave the party.~,
 }
 
 l << {
 :name => :pukeeverywhere, 
-:text => %~Puke everywhere. Everyone leaves you lying on the floor alone, humiliated.~,
+:text => %~I shotgun the next beer and throw it up immediately. And then I throw up the
+previous two beers, and then everything before that two. All over the crowd.
+Jesus. Pretty sure someone got nailed right in the face. There's laughter, 
+there's screams. When they realize I'm not getting up again the crowd
+disperses and goes home.
+    I'm left there alone, lying on my kitchen table in a pool of my own vomit.~,
 }
 
 l << {
@@ -350,37 +384,82 @@ the smoke. Um...sorry."
 sees me humilate myself is Tasha, who is now presently as one would expect from
 her texting every girl in the school who I could possibly have a shot with to
 tell them about what a fucking loser I am.~,
+:options => {:sagelytasha => "Go talk to Tasha and try to control the damage.", :larissasmad => "Go talk to Larissa and try to control the damage."},
 }
 
 l << {
 :name => :janesaslut, 
-:text => %~Naw, just savour the moment. Oh man, where did Andy and Jane go? They're hookin
-up? ZOMG.~, #LOLOLOLOLOLOLOLOLOLOLOL nice twist re: suburbaniztes
-:options => {:cockblockandy => "Gotta stop this!!", :seducemadlarissa => "now that we're alone..."},
+:text => %~"I dunno, I think most people care. Sometimes it's just hard to show it, you
+know? It's scary, or not cool, or whatever."
+    Larissa smiles. "Yeah, maybe. Thanks."
+    She kills the cigarette and tosses it out into the lawn. "Thanks for the
+cigarette. You coming in?"
+    "Sure," I say. We walk back into the party together. Things are going
+pretty alright, I gotta say.
+    "Hmm," Larissa says, looking around the place. "Did you see my friend Jane
+at all earlier? Can you see her?"
+    I scan the room. I realize that I don't see Andy either. Christ. Can't
+leave Casanova alone for a second.~,
+:options => {:cockblockandy => "I think I know where they are...", :seducemadlarissa => "Now that we're alone..."},
 }
 
 l << {
 :name => :sagelytasha, 
-:text => %~Don't worry about it. She's not into guys. The world doesn't revolve around
-you.
+:text => %~I walk down from the front porch onto the lawn. "Hi Tasha," I say.
+    Tasha looks up from her phone. "Oh, hey Kyle.'
+    "Did...did you see...that? Do you think you could do me a favour and...
+not go around telling everyone? Like you did with...?"
+    Tasha laughs. "Don't worry about it. Rumour is, she's just not into guys.
+    She...oh. "Oh."
+    "Jeez Kyle, don't take everything so personally. The world doesn't revolve
+around you all the time."
     "Sometimes I feel like I'm not the main character in my own story."
-    "That must be hard for you", Tasha deadpans. "Coming to terms with the whole
-world-not-revolving-around-you thing. I mean, it was for me. When I was six."~,
+    "That must be hard for you", Tasha deadpans. "Coming to terms with that
+whole world-not-revolving-around-you thing. I mean, it was for me. When I was
+six."
+    I bum another smoke from her. It's nice talking to Tasha again.~,
 }
 
 l << {
 :name => :larissasmad, 
-:text => %~No, fuck off. Andy and Jane are gone. This sucks.~,
+:text => %~I run in after Larissa. "Hey, about that, I just want to..."
+    "I said it's fine. Please, just..."
+    "Listen, but, the thing is, I do really like you, and..."
+    She seems distracted. "I'm sorry, but could you...have you seen my friend
+Jane anywhere?"
+    "I haven't, no, but..."
+    Larissa looks around for a bit. Her breathing gets heavier. "Oh God," she
+says. "Oh God oh God oh God."
+    She runs out the front door crying.
+    What just happened?
+    What did I do?~,
 }
 
 l << {
 :name => :cockblockandy, 
-:text => %~Bust into your room and kick Andy and Jane out. Larissa lies on your bed, cries,
-falls asleep. You consider making a move but it feels wrong.  sleep on a
-beanbag chair.~,
+:text => %~"Follow me!" I tell Larissa, and lead her by the hand to my bedroom.
+    The door is closed, muffled music is streaming through it. We bust in and
+see Andy in my bed making out with Larissa's friend.
+    "Jane!" Larissa cries.
+    Without a word, Jane jumps up and runs out the door. Andy runs after her.
+Larissa starts to, but suddenly seems dispirited. She slumps down in my bed and
+starts to cry.
+    I don't know what to say or do. I'm not sure what's going on, but making
+a move feels wrong.
+    I collapse into my beanbag chair and lie there. Larissa cries herself to
+sleep.~,
 }
 
 l << {
 :name => :seducemadlarissa, 
-:text => %~FUCK OFF. starts crying, leaves.~,
+:text => %~He did it! The wonderful bastard did it! With Jane and Andy out of the way, the
+road to Larissa is clear...!
+    "Well," I throw my arm around Larissa, "looks like we've both just been
+ditched. Might as well make the best of it, eh...?"
+    But Larissa ducks out from my arm. "No! You don't understand! Jane is..."
+Her breathing gets heavier, she starts to whimper.
+    "But..." I start to say.
+    She runs out the front door crying.
+    What just happened?
+    What did I do?~,
 }
