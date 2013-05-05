@@ -1,5 +1,6 @@
 require 'webrick'
 require './html_presenter.rb'
+require './twine_parser.rb'
 
 #create the http server object
 server = WEBrick::HTTPServer.new :Port => 8005
@@ -10,6 +11,10 @@ server.mount_proc '/' do |req, res|
   res.body = pageheader +
   "
   <a href='#{Random.rand 9999}'>link to another page</a>
+  <br>
+  <a href='start'>start</a>
+  <br>
+  
   <hr>
   
   #{render_page req.meta_vars}

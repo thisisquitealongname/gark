@@ -76,6 +76,17 @@ def pagebody path
   
   return 'welcome to a new game of GARK' if path == ''
   
+  #find the correct node for shit
+  #WIP!
+  node = nil
+  @master_node_list.each do |x|
+    next unless path.equalsignorecase x.nodename
+    node = x
+    break
+  end
+  
+  return node.text if node
+  
   %[
 	<span id="mask">
 
