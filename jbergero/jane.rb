@@ -151,49 +151,38 @@ page :smokers,
 	:met_her => "Remember meeting Larissa", :talkabouttheweather => "Ask about the thunder you can scent rolling in", :tobytakeabow => "Bow with flourish to your secret lover", :observeidly => "Practice your suave"
 
 
-l << {
-:name => :talkabouttheweather,
-:text => %^
+page :talkabouttheweather,
+	%^
 	Giggling, Larissa grabs your forearm.
 	
 	"Sunburns sting, Jane."
 	^,
-:code => %^^,
-:options => [:smokers]
-}
+	:smokers
 
-l << {
-:name => :tobytakeabow,
-:text => %^
+
+page :tobytakeabow,
+	%^
 	You fix your eyes on her in a beam of visual cues. Your left leg slips behind your right, transforming into a grand flourish before her. 
 	
 	Yeah, that was probably abnormal. Fight the blush.
 	^,
-:code => %^^,
-:options => {:smokers => nil, :class => "Fuck! Escape to class."}
-}
+	:smokers => nil, :class => "Fuck! Escape to class."
 
-l << {
-:name => :observeidly,
-:text => %^
+
+page :observeidly,
+	%^
 	You stand back-to-brick next to 'issa, shoulders brushing innocuously. Heavy drags, foggy breath.
 	^,
-:code => %^^,
-:options => [:smokers]
-}
+	:smokers
 
 
-l << {
-:name => :doubt,
-:text => %^
+page :doubt,
+	%^
 	You fall back onto the La-Z-Boy opine "Sometimes I feel like I'm not the main character in my own story. I have the unshakeable sense that every piece of my life has already been played out elsewhere, or even right here."
 
 	"But, Lovely, you are the center of the venn diagram of everything you've been exposed to," Larissa began soothingly, "Sure, all the parts of your life have been experienced by others--"
 	"But you're the only person that all of what happens to you happens to," you spit, "I know. I thought that as soon as I said it. I just needed to bitch."
-^,
-:code => %^^,
-:options => []
-}
-
+	^,
+	:jumpoffcliff => "Jump off cliff 404"
 
 end
