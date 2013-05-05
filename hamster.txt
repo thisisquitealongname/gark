@@ -1,11 +1,11 @@
 :: Start
-It's morning. This is the 364th day of your imprisonment in this 2 by 1 box of hate. Your life is one long, tediuous game of waiting, punctuated by terrifying moments of being swung up into the arms of your owners.
-
-Your name is Squiggles, the Hamster with the concept of time and numeracy.
+It's morning. You want to explore.. but you've chewed all these bars before. You nibble at the same chunk of sawdust you peed on a month ago. Your life is one long, tediuous game of waiting, punctuated by terrifying moments of being swung up into the arms of your owners while they parrot the word "Squiggles". Confinement is second-nature -- it's almost as if you're playing a minor character in your own story.
+
+You're in one of the few places you know.
 <<silently>>
 	<<set $hamsterCageOpen = true>> 
 	<<set $hamsterCageDestroyed = false>> 
-	<<set $catLocation = "living room">>
+	<<set $catLocation = "Living Room">>
 	<<set $hamsterRoomOccupiedByHuman = false>>
 
 <<endsilently>>
@@ -62,7 +62,7 @@ You're in the hallway.
 :: Bedroom
 You're in your bedroom.
 
-<<if $catLocation eq "bedroom">>
+<<if $catLocation eq "Bedroom">>
 	There is a cat slinking about the room, eyeing you. It makes you uncomfortable.
 
 	<<if $hamsterCageDestroyed>>
@@ -91,11 +91,34 @@ You're in your bedroom.
 
 
 
+:: Kitchen
+You're in the kitchen.
+
+
+:: Leap Away From Cat
+You leap away from the cat and scurry into the middle of the bedroom.
+
+<<display "Bedroom">>
+
+
 :: Run From Cat
 <<silently>>
-	<<if $catLocation eq "bedroom">>
+	<<if $catLocation eq "Bedroom">>
 		<<set $hamsterEscape = "Hallway">>
 	<<endif>>
+	
+	<<if $catLocation eq "Hallway">>
+		<<set $hamsterEscape = "Living Room">>
+	<<endif>>
+
+	<<if $catLocation eq "Living Room">>
+		<<set $hamsterEscape = "Kitchen">>
+	<<endif>>
+
+	<<if $catLocation eq "Kitchen">>
+		<<set $hamsterEscape = "Kitchen Walls"
+	<<endif>>
+
 <<endsilently>>
 	You scurry from the bedroom and into the <<print $hamsterEscape>>, dropping a pellet as you go.
 <<silently>>
@@ -105,13 +128,17 @@ You're in your bedroom.
 <<endsilently>>
 You now have <<print $hamsterPellets>> pellets.
 
-<<display "Hallway">>
-
-
-:: Leap Away From Cat
-You leap away from the cat and scurry into the middle of the bedroom.
+<<if $catLocation eq "Bedroom>>
+	<<display "Hallway">>
+<<endif>>
 
-<<display "Bedroom">>
+<<if $catLocation eq "Hallway">>
+	<<display "Kitchen">>
+<<endif>>
+
+<<if $catLocation eq "Kitchen">>
+	<<display "Kitchen Walls">>
+<<endif>>
 
 
 :: Explore Bedroom
@@ -126,12 +153,12 @@ Nom nom. You store 6 pellets in your cheek.
 <<actions "Wander Out Of Cage">>
 
 
-:: Wander Out Of Cage
-You wander out of your cage. Below, a cat stalks by.
-<<silently>>
-	<<set $catLocation = "bedroom">>
-<<endsilently>>
-<<actions "Leap Onto Cat" "Leap Away From Cat">>
+:: Kitchen Walls
+Mold and sawdust dominate your nose. Prickly fiberglass adheres to your coat. "Squeaks" echo in close proximity.
+
+
+:: Living Room
+You're in the living room.
 
 
 :: Leap Onto Cat
@@ -141,12 +168,16 @@ Startled, the cat takes off and runs downstairs, zigzagging through a maze of le
 
 The cat scampers on, disappearing into the kitchen.
 <<silently>>
-	<<set $catLocation = "kitchen">>
+	<<set $catLocation = "Kitchen">>
 <<endsilently>>
 <<display "Living Room">>
 
 
-:: Living Room
-You're in the living room.
+:: Wander Out Of Cage
+You wander out of your cage. Below, a cat stalks by.
+<<silently>>
+	<<set $catLocation = "Bedroom">>
+<<endsilently>>
+<<actions "Leap Onto Cat" "Leap Away From Cat">>
 
 
