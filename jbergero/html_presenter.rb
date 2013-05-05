@@ -72,6 +72,11 @@ def pageheader
 			}
 			
 	</style-->
+	<style type="text/css">
+		pre {
+			font-family: arial
+			}
+	</style>
 </head>
 <body>
   ]
