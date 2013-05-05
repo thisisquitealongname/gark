@@ -16,6 +16,7 @@ class Storyline
       if links.member? :location
         @pages[name].location = links[:location]
         links.delete :location
+      end
     end
   end
   
