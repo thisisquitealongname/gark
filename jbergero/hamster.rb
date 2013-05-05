@@ -111,7 +111,23 @@ l << {
 l << {
 :name => "Put Back In Cage",
 :text => %(A hand swoops down and plucks you from the floor. You hear the stilted mnemonic "Squiggles!" as you're carried towards your cage.),
-:code => "",
+:code => %(
+	if $hamster_cage_destroyed
+		@text << %[But HA! Your cage lies in shambles on the floor.
+		"Squig-GLES! ... CAT!!!"
+		
+		You're deposited on a table in the bedroom. The giant jailkeeper spirals off in a heated pursuit. Eventually, you hear a faint "Mraww!" and the click of a door.
+
+		The cat is outside.]
+		
+		@options << :bedroom
+		$cat_location = :outside
+	else
+		@text << %[The hand deposits you unceremoniously into your soiled confines, shutting the door behind.]
+		
+		@options << :incage
+		$hamster_cage_open = false
+		),
 :options => []
 }
 
