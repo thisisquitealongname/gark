@@ -14,7 +14,7 @@ pretty useful stuff to know. If your string is going to need some of those speci
 =end
 
 #you can omit the " :code => " part completely if you don't have any code that needs to be ran at this node
-#:text and :options get loaded into @text and @options
+#:text and :options get loaded into @text and @options respectively when the node is visited. Careful, changes to these variables are permanent
 
 l << {
 :name => %[your bedroom],

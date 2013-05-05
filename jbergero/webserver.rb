@@ -9,9 +9,7 @@ trap 'INT' do server.shutdown end
 server.mount_proc '/' do |req, res|
   res.body = pageheader +
   "
-  <a href='#{Random.rand 9999}'>link to another page</a>
-  <br>
-  <a href='start'>start</a>
+  <a href='yourbedroom'>start</a>
   <br>
   
   <hr>

@@ -1,6 +1,8 @@
 =begin
 sex
 =end
+@hamster_node_list = []
+l = @hamster_node_list
 
 l << {
 :name => 'Start',
@@ -21,10 +23,10 @@ l << {
 :text => "You're in your cage. The door is ",
 :code => '
 	if $hamster_cage_open
-	  @text << open
+	  @text << "open"
 	  @options << :exitcage
 	else
-	  @text << closed
+	  @text << "closed"
 	end
 	',
 :options => [:stayincage]
@@ -48,7 +50,7 @@ l << {
 I'd better eat more before venturing out. Wise is the hamster that doesn't starve! ...
 Or maybe I'll go for a run. That looks fun.",
 :code => '',
-:options => [:eatpellets :runonwheel]
+:options => [:eatpellets, :runonwheel]
 }
 
 l << {
