@@ -1,50 +1,160 @@
-Jane
+#Jane: hip and aloof. good sartorial sense. kind of depressed. keeps up with what's hip but is better than it.
+#todo: add pics. twine can defs be hacked to support images.
+
+#inspiration: ginger snaps, cobra starship, 
+#and and larissa is quiet without much to offer, but has a lot of hidden gems in her thoughts. Jane likes that she seems real. Sometimes too real: her standing up to Jane about outting themselves is the first time she's asserted herself
+
+#Jane
 
 
 :: Start
 
 It's morning. You've slept in past the [[bell]] again.
 
+Your Dad has already but your mother, bless her prozac-munching heart, wouldn't deign to bother you. Not anymore. You get up on your own time, if you get up, if there's something good going on.
+
 You roll over, grunt, unwedge your panties, and fall back asleep, drooling, into your [[pillow]].
 
 
-
 :: bell
-The bell is an inoffensive and toothless riff based on Chuck Berry's ancient surf-pop. Every day you cringe inwardly when it tills the garden of children you're entangled with. You wish it was Timo Räisänen or Beirut's Gulag Orkestra or even Bach. You would never let anyone at school know this, though. Never let any of them know you care.
+The bell at school is an inoffensive and toothless riff based on Chuck Berry's ancient surf-pop. Every day you cringe inwardly when it tills the garden of children you're entangled with. You wish it was Timo Räisänen or Beirut's Gulag Orkestra or even Bach. You would never let anyone at school know this, though. Never let any of them know you care.
 
 
 :: pillow
+The [[sun]] shifts 5 degrees and your pillow remains comfortable.
 
-the sun shifts 5 degrees and your pillow remains comfortable.
+The [[clock ticks]].
 
-The [[clock ticks]]
+:: sun
+You're looking up at the sky. There's a blank expanse all around. You are aware that in microscope view there are blowing fields of wheat below your feet. The sun beads sweat out of you, slowly sucking your life. Purple and green whirlwinds tear the edges of reality apart in the distance. Somewhere, a wall chinks. A Goat on a Pole bounces with firm determination towards nothing.
+Trees rattle in the empty wind.
+You remember your future.
+But you won't, when you wake up.
+<<back pillow>>
 
 :: clock ticks
+It's coming on third period. You decide to roll out of bed, make your daily effortlessly hip sartorial choices, and get out the door. Today: a boring orange tank top, your prefaded, pre-ripped jeans, and your poignantly unbranded headphones. You have flair, you know it, and you are above it. If your blonde curls weren't enough, your natural habit to hold yourself like you're always on the edge of a question would still make the boys fall over themselves around you. Sometimes you indulge them, but mostly you can't stand to step down to their level anymore. They say "I'd like to get to know you" and you hear "I want to trade genetics with you". A few times you've even lost your temper and left them stunned and lost as you tore apart their motivations into the darwinian algorithms[[would Jane use 'darwinian'?]] they were.
 
-it's coming on third period. you decide to roll out, pull on your prefaded jeans, boring tank top, your selectedly unbranded headphones. it's not that you are a slacker, it's just that... you can't bring yourself to care. .... [[school]]
+Sleepily mulling over all this for the severaleth[??] time you don't prepare yourself for the sunlight. It momentarily blinds you.
+
+You smell bread, mysteriously.
+
+You set [[off down the street]].
+
+:: off down the street
+Tamerlane Avenue is as nondescript as the other 21 streets in your neighbourhood. You've counted all of them several times over. You reflect that it is ironic that in a, that it is precisely because . You wish you could express this. Well, Larissa will understand. You smile a bit at the thought.
+
+It's not that you are a slacker, it's just that... you can't bring yourself to care. You .... [[school]]. 
+
+You would be writing poetry if that wasn't already so fucking overdone.
+
+<<choice "Take the direct route" "direct">>
+<<choice "Pass through the suburban ghetto across the street" "Ghetto">>
+
+:: direct
+
+[[school]]
+
+:: Ghetto
+
+[[school]]
 
 :: school
+<<choice "Smokers">>
+<<Choice "Class">>
 
-~~ go to school, see larissa
-Larissa lives on the other side of town. You met her late last year. Grade 10.
+:: class
+
 
 [[Kyle]] 
 
 
+
+:: smokers
+
+Where else are you going to go? You only smoke socially, but it's not like you actually showed up for class. And anyway, you spy Larissa across the pit, under the tree that traps all the carcinogens and kills the grass underfoot.
+
+Larissa. Lovely Larissa. You call her 'issa, like "is a", as in "is a boss", "is a player", "is a snowflake" [XXX too sappy?].  She's not Lisa, Leslie, Loren or Luke. Better than Tessa and that boy John who felt you up awkwardly in his friend's closet at a party. Far better. She's made your heart flutter in a way you didn't know it could.
+
+Larissa lives on the other side, in the low-income sprawl. Neither of you do extra curriculars anymore. You've never had any classes with her, which is why you only [[met her]] late last year. She's a year older thanbut then again so are all of your friends. That comes with skipping a grade 
+
+when you were younger. When you still cared. Now you just want to want something.
+
+Larissa slinks up to you, flip flops in hand.
+
+"Hey"
+"Hey"
+
+That's all you have for each other. The school thinks you're just friends and you for one want to keep it that way.
+
+
+:: met her
+You had skipped out on last period. The French revolution was sooo last era. You know this history is important, but you've already read it and you know anything you've forgotten you can just get out of Wikipedia if ever you need it again. Instead, you wandered down train tracks, bored, hoping for something to happen. Usually when you do this you're unrewarded. One day you found a bird that had lost its mother in the forest, and you took it in and found found an animal rescue shelter that would take it. Another time _________________________. Those were the highlights of your Grade 11. That is, until today. On this day, something wonderful happened.
+
+There is a rusty train bridge over Yonge St where the graffiti punkers go to practice. She had her headphones on and was sketching the new works.
+
+
+[sultry meeting]
+
+You "Sometimes I feel like I'm not the [[main character]] in my own story. I hate how every piece of my life has already been played out elsewhere!"
+"But "
+
+
+-bond over boys hitting on them, just trying to get in their pants
+ --"this fucking asshole kept trying to impress me with his knowledge of like, fucking bash or something, and then turning to his friends and saying how. Hellloooo, who was it that installed his bootloader for him yesterday?" She takes a rapid drag of their cigaette.
+
+
+:: main character
+
+:: doubt
+"But, Lovely, you are the center of the venn diagram of everything you've been exposed to," Larissa began soothingly, "Sure, all the parts of your life have been experienced by others--"
+"But you're the only person that all of what happens to you happens to," you spit, "I know. I thought that as soon as I said it. I just needed to bitch."
+
+I'm here with you when you start shaking
+Don't worry
+
+you know love won't be enough to get you out of the sprawl
+
+
+i'm boring you
+
+
 :: lezzy
+"I-It's a lot more acceptable these days!" she barks again. It seems like she's always on this argument these days. She cares. In fact, that's what you like so much about her, but you're not sure you're really into it, into //her// type, though it sure is fun to trip along with. You are pretty sure you're into *her* though.
 
-"It's a lot more acceptable these days!" she barks again. It seems like she's [[always]] on this argument these days. She cares. You're not sure you're really.
+She doesn't talk much around people, but in intimate settings she opens up like a flower display. It *inspires* you. she's so different than the rest of your social circle. She seems quiet, even plain, without much to offer, none of that sweet talking charm and confident showmanship, of which you are undeniably the queen. There's a lot of hidden [[gems]] in her.  For you, Larissa seems real. There's not really a lot like her that you could come across living in the sprawl.
 
+And you like Larissa because . She only lets her thoughts out for people she trusts. For you. Larissa seems real.
 
-
-:: Kyle
-
-You've known Kyle since you were kids. You used to play [...............]
-
-:: ??? 
-
-You "Sometimes I feel like I'm not the main character in my own story. i hate how every piece of my life has already been played out elsewhere!"
-'''"That must be hard for you", Tasha depans. "Coming to terms with the whole
-world-not-revolving-around-you thing. I mean, it was for me. When I was six."'''
+It's hard, her wanting to out herself. "Out" you. You don't think of yourself as a //lesbian//, and she has no right to drag your name through the mud like that. She wouldn't... but her jealousy of you might take a different turn[XXX cleanup]. She's never exercised [[autonomy]].
 
 
+:: Autonomy
+Larissa sort of took on the womanly roles when her mom left. Her dad comes home at 7 most nights, exhausted, cracks a beer, flips on the TV, and loafts. She serves him dinner but doesn't watch with him. Sometimes they get pizza in when they're feeling jovial. He's supportive, always lets her go out when she wants, but he treats. He can't help it, it's how he was raised, but it's fucking sexist and I know it.
+
+I think she likes me because I stand up to life. But sometimes I can't tell if it's admiration or jealousy, though. I'm not sure she can either.
+
+:: gems
+
+[[XXX switched personepctives]]
+the first time we fucked, she tasted like strawberries.
+
+We'd gone to the Cineplex and watched some terrible chick flick that we made fun of in the back row and ignored the mean looks we got. Biked in the night under the streetlights and found a Dairy Queen and got sundaes. We ended up back at her place. Her dad was passing out in the living room. We slipped past him, giggling about life. We sat on her bed and put on The Postal Service. We are sparking and I don't even notice it.
+
+I guess I was looking at her hungrily--she says she would never have done it otherwise--because suddenly she held my head and kissed me. The sugar from the artifical strawberry syrup was still coating her lips.
+
+I'd made out with chicks before, mostly at parties for show, but I'd never fucked one[XXX expand this paragraph?]. 
+
+When she came, her clit glistened just like a pearl.
+
+
+:: party
+
+# when she gets to the party she has her own problems in mind
+# has no idea the boys are obsessing over her and larissa
+# and if she didn't wouldn't give a shit
+
+
+
+
+-we hate it when our friends become successful
