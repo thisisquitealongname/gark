@@ -1,4 +1,6 @@
 
+require './nodes.rb'
+
 class Kyle < Storyline
 
 page :start,
