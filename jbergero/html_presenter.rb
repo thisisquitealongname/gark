@@ -25,6 +25,7 @@ end
 
 
 class Page
+  #written by kousu, modified by jbergero
   attr_accessor :text
   attr_accessor :links
   attr_accessor :block
@@ -34,11 +35,12 @@ class Page
     paragraphs<<@text;
     
     paragraphs += (Enumerator.new &@block).to_a unless @block == nil
-    puts paragraphs.join "\n";
-    puts ""
+    ret = paragraphs.join "<br>";
+    ret << "<hr><ul>"
     @links.each_pair do |link, flavour| 
-       puts "#{flavour} -> #{link}"
+       ret << "<li><a href='#{link}'>#{flavour}</a></li>" "#{flavour} -> #{link}"
     end
+    ret << '</ul>'
   end
 end
 
@@ -165,6 +167,7 @@ def find_node blah
     next unless names_match(blah, x[:name])
     return x
   end
+  puts "find_node #{blah} failed"
   nil
 end
 
