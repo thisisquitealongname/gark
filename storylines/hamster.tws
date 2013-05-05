@@ -36,14 +36,11 @@ S'text'
 p18
 VIt's morning. You want to explore.. but you've chewed all these bars before. You nibble at the same chunk of sawdust you peed on a month ago. Your life is one long, tediuous game of waiting, punctuated by terrifying moments of being swung up into the arms of your owners while they parrot the word "Squiggles". Confinement is second-nature -- it's almost as if you're playing a minor character in your own story.\u000a\u000aYou're in one of the few places you know.\u000a<<silently>>\u000a	<<set $hamsterCageOpen = true>> \u000a	<<set $hamsterCageDestroyed = false>> \u000a	<<set $catLocation = "Living Room">>\u000a	<<set $bedroomOccupied = false>>\u000a\u000a<<endsilently>>\u000a<<display "In Cage">>
 p19
-sS'tags'
-p20
-(lp21
 sS'created'
-p22
+p20
 ctime
 struct_time
-p23
+p21
 ((I2013
 I5
 I4
@@ -53,17 +50,20 @@ I49
 I5
 I124
 I1
+tp22
+(dp23
 tp24
-(dp25
-tp26
-Rp27
+Rp25
+sS'title'
+p26
+VStart
+p27
 sS'modified'
 p28
-g27
-sS'title'
+g25
+sS'tags'
 p29
-VStart
-p30
+(lp30
 sbsa(dp31
 g12
 I00
@@ -80,9 +80,7 @@ g18
 VYou huddle in the corner of the cage, nibbling on a pellet and staring at your running wheel.\u000a\u000aI'd better eat more before venturing out. Wise is the hamster that doesn't starve! <<actions "Eat Pellets">>\u000aI think I'll go for a run. That looks fun. <<actions "Run On Wheel">>
 p35
 sg20
-(lp36
-sg22
-g23
+g21
 ((I2013
 I5
 I4
@@ -92,15 +90,17 @@ I49
 I5
 I124
 I1
-tp37
-(dp38
-tp39
-Rp40
-sg28
-g40
-sg29
+tp36
+(dp37
+tp38
+Rp39
+sg26
 VStay In Cage
-p41
+p40
+sg28
+g39
+sg29
+(lp41
 sbsa(dp42
 g12
 I00
@@ -117,9 +117,7 @@ g18
 VYou scurry out the door. On the last bar, you realize there's nothing stopping your 4 foot descent onto the tile floor. You try to cling onto metal with your hind legs, but it's no use. You plummet.\u000a\u000aOuch. Son of a pellet. You can't move.\u000a\u000aExactly 4 hours and 3 minutes later, a foot descends onto you, splattering you across the tile.
 p46
 sg20
-(lp47
-sg22
-g23
+g21
 ((I2013
 I5
 I4
@@ -129,15 +127,17 @@ I49
 I5
 I124
 I1
-tp48
-(dp49
-tp50
-Rp51
-sg28
-g51
-sg29
+tp47
+(dp48
+tp49
+Rp50
+sg26
 VExit Cage
-p52
+p51
+sg28
+g50
+sg29
+(lp52
 sbsa(dp53
 g12
 I00
@@ -154,9 +154,7 @@ g18
 VYou hop on, and begin to run.\u000a\u000aSuddenly, you feel the wheel loosen and detach from the cage. The wheel hits the bottom of the cage and careens into the side, shifting the entire cage off of its resting place and onto the floor. The plastic bottom shatters.\u000a\u000aMortified and still wheelbound, you continue to run forwards until the wheel hits a wall and falls on its side. You climb out, rattled.\u000a<<silently>>\u000a	<<set $hamsterCageDestroyed = true>>\u000a<<endsilently>>\u000a<<display "Bedroom">>
 p57
 sg20
-(lp58
-sg22
-g23
+g21
 ((I2013
 I5
 I4
@@ -166,15 +164,17 @@ I2
 I5
 I124
 I1
-tp59
-(dp60
-tp61
-Rp62
-sg28
-g62
-sg29
+tp58
+(dp59
+tp60
+Rp61
+sg26
 VRun On Wheel
-p63
+p62
+sg28
+g61
+sg29
+(lp63
 sbsa(dp64
 g12
 I00
@@ -191,9 +191,7 @@ g18
 VNom nom. You store 6 pellets in your cheek.\u000a<<silently>>\u000a	<<set $hamsterPellets = 6>>\u000a<<endsilently>>\u000a<<if $hamsterCageOpen>>\u000a	<<actions "Wander Out Of Cage">>\u000a<<else>>\u000a	<<actions "Stay In Cage">>\u000a<<endif>>
 p68
 sg20
-(lp69
-sg22
-g23
+g21
 ((I2013
 I5
 I4
@@ -203,15 +201,17 @@ I37
 I5
 I124
 I1
-tp70
-(dp71
-tp72
-Rp73
-sg28
-g73
-sg29
+tp69
+(dp70
+tp71
+Rp72
+sg26
 VEat Pellets
-p74
+p73
+sg28
+g72
+sg29
+(lp74
 sbsa(dp75
 g12
 I00
@@ -228,9 +228,7 @@ g18
 VYou wander out of your cage. Below, a cat stalks by.\u000a<<silently>>\u000a	<<set $catLocation = "Bedroom">>\u000a<<endsilently>>\u000a<<actions "Leap Onto Cat" "Leap Away From Cat">>\u000a
 p79
 sg20
-(lp80
-sg22
-g23
+g21
 ((I2013
 I5
 I4
@@ -240,15 +238,17 @@ I29
 I5
 I124
 I1
-tp81
-(dp82
-tp83
-Rp84
-sg28
-g84
-sg29
+tp80
+(dp81
+tp82
+Rp83
+sg26
 VWander Out Of Cage
-p85
+p84
+sg28
+g83
+sg29
+(lp85
 sbsa(dp86
 g12
 I00
@@ -265,9 +265,7 @@ g18
 VYou leap away from the cat and scurry into the middle of the bedroom.\u000a\u000a<<display "Bedroom">>
 p90
 sg20
-(lp91
-sg22
-g23
+g21
 ((I2013
 I5
 I4
@@ -277,15 +275,17 @@ I34
 I5
 I124
 I1
-tp92
-(dp93
-tp94
-Rp95
-sg28
-g95
-sg29
+tp91
+(dp92
+tp93
+Rp94
+sg26
 VLeap Away From Cat
-p96
+p95
+sg28
+g94
+sg29
+(lp96
 sbsa(dp97
 g12
 I00
@@ -302,9 +302,7 @@ g18
 VYou brazenly leap towards the cat. Puff! You land in its fur and cling to its back.\u000a\u000aStartled, the cat takes off and runs downstairs, zigzagging through a maze of legs. You fall off, landing on a red rug in a room full of people.\u000a\u000aThe cat scampers on, disappearing into the kitchen.\u000a<<silently>>\u000a	<<set $catLocation = "Kitchen">>\u000a<<endsilently>>\u000a<<display "Living Room">>
 p101
 sg20
-(lp102
-sg22
-g23
+g21
 ((I2013
 I5
 I4
@@ -314,15 +312,17 @@ I16
 I5
 I124
 I1
-tp103
-(dp104
-tp105
-Rp106
-sg28
-g106
-sg29
+tp102
+(dp103
+tp104
+Rp105
+sg26
 VLeap Onto Cat
-p107
+p106
+sg28
+g105
+sg29
+(lp107
 sbsa(dp108
 g12
 I00
@@ -339,9 +339,7 @@ g18
 VYou're in your bedroom.\u000a\u000a<<if $bedroomOccupied>>\u000a	<<display "Put Back In Cage">>\u000a<<else>>\u000a	<<if $catLocation eq "Bedroom">>\u000a		There is a cat slinking about the room, eyeing you. It makes you uncomfortable.\u000a\u000a		<<if $hamsterCageDestroyed>>\u000a			Your cage lies shattered on the floor.\u000a		<<else>>\u000a			<<if $hamsterCageOpen>>\u000a				Your cage is open.\u000a				<<actions "Return To Cage" "Run From Cat">>\u000a			<<else>>\u000a				<<actions "Run From Cat">>\u000a			<<endif>>\u000a		<<endif>>\u000a	<<else>>\u000a		<<if $hamsterCageDestroyed>>\u000a			Your cage lies shattered on the floor.\u000a			<<actions "Explore Bedroom" "Hallway">>\u000a		<<else>>\u000a			<<if (not $hamsterCageDestroyed) and $hamsterCageOpen>>\u000a				<<actions "Return To Cage" "Explore Bedroom" "Hallway">>\u000a			<<else>>\u000a				<<actions "Explore Bedroom" "Hallway">>\u000a			<<endif>>\u000a		<<endif>>\u000a	<<endif>>\u000a<<endif>>
 p112
 sg20
-(lp113
-sg22
-g23
+g21
 ((I2013
 I5
 I4
@@ -351,15 +349,17 @@ I28
 I5
 I124
 I1
-tp114
-(dp115
-tp116
-Rp117
-sg28
-g117
-sg29
+tp113
+(dp114
+tp115
+Rp116
+sg26
 VBedroom
-p118
+p117
+sg28
+g116
+sg29
+(lp118
 sbsa(dp119
 g12
 I00
@@ -376,9 +376,7 @@ g18
 VYou're in the living room.\u000a\u000a<<if $livingRoomOccupied>>\u000a	<<display "Put Back In Cage">>\u000a<<else>>\u000a	<<if $catLocation eq "Living Room">>\u000a		A cat perks up and stares at you from the sofa.\u000a		<<actions "Run From Cat" "Approach Cat">>\u000a	<<else>>\u000a		<<actions "Kitchen" "Hallway">>\u000a	<<endif>>\u000a<<endif>>
 p123
 sg20
-(lp124
-sg22
-g23
+g21
 ((I2013
 I5
 I4
@@ -388,15 +386,17 @@ I40
 I5
 I124
 I1
-tp125
-(dp126
-tp127
-Rp128
-sg28
-g128
-sg29
+tp124
+(dp125
+tp126
+Rp127
+sg26
 VLiving Room
-p129
+p128
+sg28
+g127
+sg29
+(lp129
 sbsa(dp130
 g12
 I00
@@ -413,9 +413,7 @@ g18
 V<<display "In Cage">>
 p134
 sg20
-(lp135
-sg22
-g23
+g21
 ((I2013
 I5
 I4
@@ -425,15 +423,17 @@ I26
 I5
 I124
 I1
-tp136
-(dp137
-tp138
-Rp139
-sg28
-g139
-sg29
+tp135
+(dp136
+tp137
+Rp138
+sg26
 VReturn To Cage
-p140
+p139
+sg28
+g138
+sg29
+(lp140
 sbsa(dp141
 g12
 I00
@@ -450,9 +450,7 @@ g18
 VYou're in your cage.\u000a\u000a<<if $hamsterCageOpen>>\u000a   The door is open. \u000a   <<actions "Exit Cage" "Stay In Cage">>\u000a<<else>>\u000a	The door is closed.\u000a	<<actions "Stay in Cage">>\u000a<<endif>>
 p145
 sg20
-(lp146
-sg22
-g23
+g21
 ((I2013
 I5
 I4
@@ -462,15 +460,17 @@ I7
 I5
 I124
 I1
-tp147
-(dp148
-tp149
-Rp150
-sg28
-g150
-sg29
+tp146
+(dp147
+tp148
+Rp149
+sg26
 VIn Cage
-p151
+p150
+sg28
+g149
+sg29
+(lp151
 sbsa(dp152
 g12
 I00
@@ -487,9 +487,7 @@ g18
 V
 p156
 sg20
-(lp157
-sg22
-g23
+g21
 ((I2013
 I5
 I4
@@ -499,15 +497,17 @@ I43
 I5
 I124
 I1
-tp158
-(dp159
-tp160
-Rp161
-sg28
-g161
-sg29
+tp157
+(dp158
+tp159
+Rp160
+sg26
 VExplore Bedroom
-p162
+p161
+sg28
+g160
+sg29
+(lp162
 sbsa(dp163
 g12
 I00
@@ -524,9 +524,7 @@ g18
 VYou're in the hallway.\u000a\u000a<<if $hallwayOccupied>>\u000a	<<display "Put Back In Cage">>\u000a<<else>>\u000a	<<if $catLocation eq "Hallway">>\u000a		A cat sits on the untended carpet.\u000a		<<actions "Run From Cat">>\u000a	<<else>>\u000a		<<actions "Bedroom" "Living Room">>\u000a	<<endif>>\u000a<<endif>>
 p167
 sg20
-(lp168
-sg22
-g23
+g21
 ((I2013
 I5
 I4
@@ -536,18 +534,20 @@ I26
 I5
 I124
 I1
-tp169
-(dp170
-tp171
-Rp172
-sg28
-g172
-sg29
+tp168
+(dp169
+tp170
+Rp171
+sg26
 VHallway
-p173
+p172
+sg28
+g171
+sg29
+(lp173
 sbsa(dp174
 g12
-I01
+I00
 sg13
 (lp175
 F621.25
@@ -558,12 +558,10 @@ Tiddler
 p176
 (dp177
 g18
-V<<silently>>\u000a	<<if $catLocation eq "Bedroom">>\u000a		<<set $hamsterEscape = "Hallway">>\u000a	<<endif>>\u000a	\u000a	<<if $catLocation eq "Hallway">>\u000a		<<set $hamsterEscape = "Living Room">>\u000a	<<endif>>\u000a\u000a	<<if $catLocation eq "Living Room">>\u000a		<<set $hamsterEscape = "Kitchen">>\u000a	<<endif>>\u000a\u000a	<<if $catLocation eq "Kitchen">>\u000a		<<set $hamsterEscape = "Kitchen Walls"\u000a	<<endif>>\u000a\u000a<<endsilently>>\u000a	You scurry from the bedroom and into the <<print $hamsterEscape>>, dropping a pellet as you go.\u000a<<silently>>\u000a	<<if $hamsterPellets gt 0>>\u000a		<<set $hamsterPellets = $hamsterPellets - 1>>\u000a	<<endif>>\u000a<<endsilently>>\u000aYou now have <<print $hamsterPellets>> pellets.\u000a\u000a<<if $catLocation eq "Bedroom">>\u000a	<<display "Hallway">>\u000a<<endif>>\u000a\u000a<<if $catLocation eq "Hallway">>\u000a	<<display "Kitchen">>\u000a<<endif>>\u000a\u000a<<if $catLocation eq "Kitchen">>\u000a	<<display "Kitchen Walls">>\u000a<<endif>>
+V<<silently>>\u000a	<<if $catLocation eq "Bedroom">>\u000a		<<set $hamsterEscape = "Hallway">>\u000a	<<endif>>\u000a	\u000a	<<if $catLocation eq "Hallway">>\u000a		<<set $hamsterEscape = "Living Room">>\u000a	<<endif>>\u000a\u000a	<<if $catLocation eq "Living Room">>\u000a		<<set $hamsterEscape = "Kitchen">>\u000a	<<endif>>\u000a\u000a	<<if $catLocation eq "Kitchen">>\u000a		<<set $hamsterEscape = "Kitchen Walls"\u000a	<<endif>>\u000a\u000a<<endsilently>>\u000a	You scurry from the bedroom and into the <<print $hamsterEscape>>, dropping a pellet as you go.\u000a<<silently>>\u000a	<<if $hamsterPellets gt 0>>\u000a		<<set $hamsterPellets = $hamsterPellets - 1>>\u000a	<<endif>>\u000a<<endsilently>>\u000aYou now have <<print $hamsterPellets>> pellets.\u000a\u000a<<if $catLocation eq "Bedroom>>\u000a	<<display "Hallway">>\u000a<<endif>>\u000a\u000a<<if $catLocation eq "Hallway">>\u000a	<<display "Kitchen">>\u000a<<endif>>\u000a\u000a<<if $catLocation eq "Kitchen">>\u000a	<<display "Kitchen Walls">>\u000a<<endif>>
 p178
 sg20
-(lp179
-sg22
-g23
+g21
 ((I2013
 I5
 I4
@@ -573,15 +571,17 @@ I6
 I5
 I124
 I1
-tp180
-(dp181
-tp182
-Rp183
-sg28
-g183
-sg29
+tp179
+(dp180
+tp181
+Rp182
+sg26
 VRun From Cat
-p184
+p183
+sg28
+g182
+sg29
+(lp184
 sbsa(dp185
 g12
 I00
@@ -598,9 +598,7 @@ g18
 VYou're in the kitchen.\u000a\u000a<<if $kitchenOccupied>>\u000a	<<display "Put Back In Cage">>\u000a<<else>>\u000a\u000a<<endif>>
 p189
 sg20
-(lp190
-sg22
-g23
+g21
 ((I2013
 I5
 I4
@@ -610,18 +608,20 @@ I25
 I5
 I124
 I1
-tp191
-(dp192
-tp193
-Rp194
-sg28
-g194
-sg29
+tp190
+(dp191
+tp192
+Rp193
+sg26
 VKitchen
-p195
+p194
+sg28
+g193
+sg29
+(lp195
 sbsa(dp196
 g12
-I00
+I01
 sg13
 (lp197
 F898.75
@@ -635,9 +635,7 @@ g18
 VMold and sawdust dominate your nose. Prickly fiberglass adheres to your coat. "Squeaks" echo in close proximity.
 p200
 sg20
-(lp201
-sg22
-g23
+g21
 ((I2013
 I5
 I4
@@ -647,15 +645,17 @@ I13
 I5
 I124
 I1
-tp202
-(dp203
-tp204
-Rp205
-sg28
-g205
-sg29
+tp201
+(dp202
+tp203
+Rp204
+sg26
 VKitchen Walls
-p206
+p205
+sg28
+g204
+sg29
+(lp206
 sbsa(dp207
 g12
 I00
@@ -672,9 +672,7 @@ g18
 VA hand swoops down and plucks you from the floor. You hear the stilted mnemonic "Squiggles!" as you're carried towards your cage.\u000a\u000a<<if $hamsterCageDestroyed>>\u000a	But HA! Your cage lies in shambles on the floor.\u000a	"Squig-GLES! ... CAT!!!"\u000a	\u000a	You're deposited on a table in the bedroom. The giant jailkeeper spirals off in a heated pursuit. Eventually, you hear a faint "Mraww!" and the click of a door.\u000a\u000a	The cat is outside. \u000a	<<silently>>\u000a		<<set $catLocation = "Outside">>\u000a	<<endsilently>>\u000a	<<actions "Bedroom">>\u000a<<else>>\u000a	The hand deposits you unceremoniously into your soiled confines, shutting the door behind.\u000a	<<silently>>\u000a		<<set $hamsterCageOpen = false>>\u000a	<<endsilently>>\u000a	<<actions "In Cage">>\u000a<<endif>>
 p211
 sg20
-(lp212
-sg22
-g23
+g21
 ((I2013
 I5
 I4
@@ -684,15 +682,17 @@ I49
 I5
 I124
 I1
-tp213
-(dp214
-tp215
-Rp216
-sg28
-g216
-sg29
+tp212
+(dp213
+tp214
+Rp215
+sg26
 VPut Back In Cage
-p217
+p216
+sg28
+g215
+sg29
+(lp217
 sbsasS'scale'
 p218
 F0.80000000000000004

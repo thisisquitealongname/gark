@@ -1,0 +1,10 @@
+T:\tojam\gark\Clancy Gets A Divorce - Form\Clancy Gets A Divorce - Form\obj\x86\Debug\ResolveAssemblyReference.cache
+T:\tojam\gark\Clancy Gets A Divorce - Form\Clancy Gets A Divorce - Form\obj\x86\Debug\Clancy_Gets_A_Divorce___Form.frmClancy.resources
+T:\tojam\gark\Clancy Gets A Divorce - Form\Clancy Gets A Divorce - Form\obj\x86\Debug\Clancy_Gets_A_Divorce___Form.frmClancysBigDay.resources
+T:\tojam\gark\Clancy Gets A Divorce - Form\Clancy Gets A Divorce - Form\obj\x86\Debug\Clancy_Gets_A_Divorce___Form.Properties.Resources.resources
+T:\tojam\gark\Clancy Gets A Divorce - Form\Clancy Gets A Divorce - Form\obj\x86\Debug\GenerateResource.read.1.tlog
+T:\tojam\gark\Clancy Gets A Divorce - Form\Clancy Gets A Divorce - Form\obj\x86\Debug\GenerateResource.write.1.tlog
+T:\tojam\gark\Clancy Gets A Divorce - Form\Clancy Gets A Divorce - Form\bin\Debug\Clancy Gets A Divorce - Form.exe
+T:\tojam\gark\Clancy Gets A Divorce - Form\Clancy Gets A Divorce - Form\bin\Debug\Clancy Gets A Divorce - Form.pdb
+T:\tojam\gark\Clancy Gets A Divorce - Form\Clancy Gets A Divorce - Form\obj\x86\Debug\Clancy Gets A Divorce - Form.exe
+T:\tojam\gark\Clancy Gets A Divorce - Form\Clancy Gets A Divorce - Form\obj\x86\Debug\Clancy Gets A Divorce - Form.pdb
